@@ -1,0 +1,19 @@
+[{
+        "name": "Cruz Antonio",
+        "rol_id": 1,
+        "email": "root@arca.test",
+        "password": "root123"
+    },
+    {
+        "name": "Juan Perez",
+        "rol_id": 2,
+        "email": "dev@arca.test",
+        "password": "dev123"
+    },
+    {
+        "name": "Jose Lopez",
+        "rol_id": 3,
+        "email": "admin@arca.test",
+        "password": "admin123"
+    }
+]

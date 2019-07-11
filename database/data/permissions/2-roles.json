@@ -1,0 +1,54 @@
+[{
+    "modulo": "Roles",
+    "data": [{
+            "name": "Listado",
+            "controller": "Roles",
+            "slug": "roles.index"
+        },
+        {
+            "name": "Crear",
+            "controller": "Roles",
+            "slug": "roles.create"
+        },
+        {
+            "name": "Guardar",
+            "controller": "Roles",
+            "slug": "roles.store"
+        },
+        {
+            "name": "Visualizar",
+            "controller": "Roles",
+            "slug": "roles.show"
+        },
+        {
+            "name": "Editar",
+            "controller": "Roles",
+            "slug": "roles.edit"
+        },
+        {
+            "name": "Actualizar",
+            "controller": "Roles",
+            "slug": "roles.update"
+        },
+        {
+            "name": "Borrar",
+            "controller": "Roles",
+            "slug": "roles.destroy"
+        },
+        {
+            "name": "Estatus",
+            "controller": "Roles",
+            "slug": "roles.status"
+        },
+        {
+            "name": "Ver permisos",
+            "controller": "Roles",
+            "slug": "roles.permission"
+        },
+        {
+            "name": "Agregar permisos",
+            "controller": "Roles",
+            "slug": "roles.savePermission"
+        }
+    ]
+}]

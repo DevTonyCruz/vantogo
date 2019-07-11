@@ -1,0 +1,27 @@
+[
+    {
+        "modulo": "Paginas",
+        "data": [
+            { "name": "Listado", "controller": "Pages", "slug": "pages.index" },
+            { "name": "Crear", "controller": "Pages", "slug": "pages.create" },
+            { "name": "Guardar", "controller": "Pages", "slug": "pages.store" },
+            {
+                "name": "Visualizar",
+                "controller": "Pages",
+                "slug": "pages.show"
+            },
+            { "name": "Editar", "controller": "Pages", "slug": "pages.edit" },
+            {
+                "name": "Actualizar",
+                "controller": "Pages",
+                "slug": "pages.update"
+            },
+            {
+                "name": "Borrar",
+                "controller": "Pages",
+                "slug": "pages.destroy"
+            },
+            { "name": "Estatus", "controller": "Pages", "slug": "pages.status" }
+        ]
+    }
+]

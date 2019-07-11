@@ -1,0 +1,29 @@
+[{
+    "modulo": "Configuraciones",
+    "data": [{
+            "name": "Listado",
+            "controller": "Configurations",
+            "slug": "configuration.index"
+        },
+        {
+            "name": "Editar",
+            "controller": "Configurations",
+            "slug": "configuration.edit"
+        },
+        {
+            "name": "Mostrar",
+            "controller": "Configurations",
+            "slug": "configuration.show"
+        },
+        {
+            "name": "Actualizar",
+            "controller": "Configurations",
+            "slug": "configuration.update"
+        },
+        {
+            "name": "Estatus",
+            "controller": "Configurations",
+            "slug": "configuration.status"
+        }
+    ]
+}]

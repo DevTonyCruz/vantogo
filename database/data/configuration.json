@@ -1,0 +1,31 @@
+[{
+        "key": "Facebook",
+        "alias": "facebook",
+        "value": ""
+    },
+    {
+        "key": "Instagram",
+        "alias": "instagram",
+        "value": ""
+    },
+    {
+        "key": "Dirección",
+        "alias": "direccion",
+        "value": ""
+    },
+    {
+        "key": "Ubicación",
+        "alias": "ubicacion",
+        "value": ""
+    },
+    {
+        "key": "Teléfono de contacto",
+        "alias": "telefono_contacto",
+        "value": ""
+    },
+    {
+        "key": "Correo de contacto",
+        "alias": "email_contacto",
+        "value": ""
+    }
+]

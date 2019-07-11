@@ -1,0 +1,19 @@
+[
+    {
+        "modulo": "Preguntas Frecuentes",
+        "data": [
+            { "name": "Listado", "controller": "faqs", "slug": "faqs.index" },
+            { "name": "Crear", "controller": "faqs", "slug": "faqs.create" },
+            { "name": "Guardar", "controller": "faqs", "slug": "faqs.store" },
+            { "name": "Visualizar", "controller": "faqs", "slug": "faqs.show" },
+            { "name": "Editar", "controller": "faqs", "slug": "faqs.edit" },
+            {
+                "name": "Actualizar",
+                "controller": "faqs",
+                "slug": "faqs.update"
+            },
+            { "name": "Borrar", "controller": "faqs", "slug": "faqs.destroy" },
+            { "name": "Estatus", "controller": "faqs", "slug": "faqs.status" }
+        ]
+    }
+]

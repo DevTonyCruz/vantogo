@@ -1,0 +1,47 @@
+[
+    {
+        "modulo": "Banners",
+        "data": [
+            {
+                "name": "Listado",
+                "controller": "Banners",
+                "slug": "banners.index"
+            },
+            {
+                "name": "Crear",
+                "controller": "Banners",
+                "slug": "banners.create"
+            },
+            {
+                "name": "Guardar",
+                "controller": "Banners",
+                "slug": "banners.store"
+            },
+            {
+                "name": "Visualizar",
+                "controller": "Banners",
+                "slug": "banners.show"
+            },
+            {
+                "name": "Editar",
+                "controller": "Banners",
+                "slug": "banners.edit"
+            },
+            {
+                "name": "Actualizar",
+                "controller": "Banners",
+                "slug": "banners.update"
+            },
+            {
+                "name": "Borrar",
+                "controller": "Banners",
+                "slug": "banners.destroy"
+            },
+            {
+                "name": "Estatus",
+                "controller": "Banners",
+                "slug": "banners.status"
+            }
+        ]
+    }
+]

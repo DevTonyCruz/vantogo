@@ -1,0 +1,44 @@
+[{
+    "modulo": "Usuarios",
+    "data": [{
+            "name": "Listado",
+            "controller": "Users",
+            "slug": "users.index"
+        },
+        {
+            "name": "Crear",
+            "controller": "Users",
+            "slug": "users.create"
+        },
+        {
+            "name": "Guardar",
+            "controller": "Users",
+            "slug": "users.store"
+        },
+        {
+            "name": "Visualizar",
+            "controller": "Users",
+            "slug": "users.show"
+        },
+        {
+            "name": "Editar",
+            "controller": "Users",
+            "slug": "users.edit"
+        },
+        {
+            "name": "Actualizar",
+            "controller": "Users",
+            "slug": "users.update"
+        },
+        {
+            "name": "Borrar",
+            "controller": "Users",
+            "slug": "users.destroy"
+        },
+        {
+            "name": "Estatus",
+            "controller": "Users",
+            "slug": "users.status"
+        }
+    ]
+}]

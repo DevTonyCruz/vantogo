@@ -1,0 +1,13 @@
+[{
+        "name": "Root",
+        "description": "Root"
+    },
+    {
+        "name": "Desarrollador",
+        "description": "Desarrollador"
+    },
+    {
+        "name": "Administrador",
+        "description": "Administrador"
+    }
+]

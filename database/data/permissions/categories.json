@@ -1,0 +1,44 @@
+[{
+    "modulo": "Categorías",
+    "data": [{
+            "name": "Listado",
+            "controller": "Categories",
+            "slug": "categories.index"
+        },
+        {
+            "name": "Crear",
+            "controller": "Categories",
+            "slug": "categories.create"
+        },
+        {
+            "name": "Guardar",
+            "controller": "Categories",
+            "slug": "categories.store"
+        },
+        {
+            "name": "Visualizar",
+            "controller": "Categories",
+            "slug": "categories.show"
+        },
+        {
+            "name": "Editar",
+            "controller": "Categories",
+            "slug": "categories.edit"
+        },
+        {
+            "name": "Actualizar",
+            "controller": "Categories",
+            "slug": "categories.update"
+        },
+        {
+            "name": "Borrar",
+            "controller": "Categories",
+            "slug": "categories.destroy"
+        },
+        {
+            "name": "Estatus",
+            "controller": "Categories",
+            "slug": "categories.status"
+        }
+    ]
+}]

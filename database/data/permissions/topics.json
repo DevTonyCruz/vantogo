@@ -1,0 +1,47 @@
+[
+    {
+        "modulo": "Topics",
+        "data": [
+            {
+                "name": "Listado",
+                "controller": "Topic",
+                "slug": "topics.index"
+            },
+            {
+                "name": "Crear",
+                "controller": "Topic",
+                "slug": "topics.create"
+            },
+            {
+                "name": "Guardar",
+                "controller": "Topic",
+                "slug": "topics.store"
+            },
+            {
+                "name": "Visualizar",
+                "controller": "Topic",
+                "slug": "topics.show"
+            },
+            {
+                "name": "Editar",
+                "controller": "Topic",
+                "slug": "topics.edit"
+            },
+            {
+                "name": "Actualizar",
+                "controller": "Topic",
+                "slug": "topics.update"
+            },
+            {
+                "name": "Borrar",
+                "controller": "Topic",
+                "slug": "topics.destroy"
+            },
+            {
+                "name": "Estatus",
+                "controller": "Topic",
+                "slug": "topics.status"
+            }
+        ]
+    }
+]

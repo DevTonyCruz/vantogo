@@ -1,0 +1,67 @@
+[
+    {
+        "modulo": "Productos",
+        "data": [
+            {
+                "name": "Listado",
+                "controller": "Products",
+                "slug": "products.index"
+            },
+            {
+                "name": "Crear",
+                "controller": "Products",
+                "slug": "products.create"
+            },
+            {
+                "name": "Guardar",
+                "controller": "Products",
+                "slug": "products.store"
+            },
+            {
+                "name": "Visualizar",
+                "controller": "Products",
+                "slug": "products.show"
+            },
+            {
+                "name": "Editar",
+                "controller": "Products",
+                "slug": "products.edit"
+            },
+            {
+                "name": "Actualizar",
+                "controller": "Products",
+                "slug": "products.update"
+            },
+            {
+                "name": "Borrar",
+                "controller": "Products",
+                "slug": "products.destroy"
+            },
+            {
+                "name": "Estatus",
+                "controller": "Products",
+                "slug": "products.status"
+            },
+            {
+                "name": "Crear Imagenes",
+                "controller": "Products",
+                "slug": "products.images"
+            },
+            {
+                "name": "Guardar Imagenes",
+                "controller": "Products",
+                "slug": "products.saveImages"
+            },
+            {
+                "name": "Estatus Imagenes",
+                "controller": "Products",
+                "slug": "products.statusImages"
+            },
+            {
+                "name": "Borrar Imagenes",
+                "controller": "Products",
+                "slug": "products.imagesDelete"
+            }
+        ]
+    }
+]
