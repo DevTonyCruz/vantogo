@@ -54,27 +54,49 @@
                 </ul>
             </li>
 
-            <li class="side-nav-title side-nav-item">SISTEMA</li>
+            <li class="side-nav-title side-nav-item">Sistema</li>
 
             <li class="side-nav-item">
-                <a href="{{ route('topics.index') }}" class="side-nav-link">
+                <a href="javascript: void(0);" class="side-nav-link">
                     <i class="dripicons-view-apps"></i>
-                    <span> Temas </span>
+                    <span> Viajes </span>
+                    <span class="menu-arrow"></span>
                 </a>
+                <ul class="side-nav-second-level" aria-expanded="false">
+                    <li>
+                        <a href="{{ route('drivers.index') }}">
+                            Choferes
+                        </a>
+                    </li>
+                </ul>
             </li>
 
             <li class="side-nav-item">
-                <a href="{{ route('faqs.index') }}" class="side-nav-link">
+                <a href="javascript: void(0);" class="side-nav-link">
                     <i class="dripicons-view-apps"></i>
-                    <span> Preguntas frecuentes </span>
+                    <span> Contenido </span>
+                    <span class="menu-arrow"></span>
                 </a>
-            </li>
+                <ul class="side-nav-second-level" aria-expanded="false">
 
-            <li class="side-nav-item">
-                <a href="{{ route('pages.index') }}" class="side-nav-link">
-                    <i class="dripicons-view-apps"></i>
-                    <span> Páginas </span>
-                </a>
+                    <li class="side-nav-item">
+                        <a href="{{ route('topics.index') }}">
+                            <span> Temas </span>
+                        </a>
+                    </li>
+
+                    <li class="side-nav-item">
+                        <a href="{{ route('faqs.index') }}">
+                            <span> Preguntas frecuentes </span>
+                        </a>
+                    </li>
+
+                    <li class="side-nav-item">
+                        <a href="{{ route('pages.index') }}">
+                            <span> Páginas </span>
+                        </a>
+                    </li>
+                </ul>
             </li>
 
         </ul>

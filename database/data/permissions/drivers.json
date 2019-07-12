@@ -1,0 +1,44 @@
+[{
+    "modulo": "Choferes",
+    "data": [{
+            "name": "Listado",
+            "controller": "drivers",
+            "slug": "drivers.index"
+        },
+        {
+            "name": "Crear",
+            "controller": "drivers",
+            "slug": "drivers.create"
+        },
+        {
+            "name": "Guardar",
+            "controller": "drivers",
+            "slug": "drivers.store"
+        },
+        {
+            "name": "Visualizar",
+            "controller": "drivers",
+            "slug": "drivers.show"
+        },
+        {
+            "name": "Editar",
+            "controller": "drivers",
+            "slug": "drivers.edit"
+        },
+        {
+            "name": "Actualizar",
+            "controller": "drivers",
+            "slug": "drivers.update"
+        },
+        {
+            "name": "Borrar",
+            "controller": "drivers",
+            "slug": "drivers.destroy"
+        },
+        {
+            "name": "Estatus",
+            "controller": "drivers",
+            "slug": "drivers.status"
+        }
+    ]
+}]

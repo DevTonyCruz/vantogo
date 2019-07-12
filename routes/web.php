@@ -112,4 +112,15 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'permission']], func
         Route::delete('/{id}',          'Web\Admin\PagesController@destroy')->name('pages.destroy');
         Route::put('/status/{id}',      'Web\Admin\PagesController@status')->name('pages.status');
     });
+
+    Route::group(['prefix' => 'drivers'], function () {
+        Route::get('/',                 'Web\Admin\DriversController@index')->name('drivers.index');
+        Route::get('/create',           'Web\Admin\DriversController@create')->name('drivers.create');
+        Route::post('/',                'Web\Admin\DriversController@store')->name('drivers.store');
+        Route::get('/{id}',             'Web\Admin\DriversController@show')->name('drivers.show');
+        Route::get('/{id}/edit',        'Web\Admin\DriversController@edit')->name('drivers.edit');
+        Route::put('/{id}',             'Web\Admin\DriversController@update')->name('drivers.update');
+        Route::delete('/{id}',          'Web\Admin\DriversController@destroy')->name('drivers.destroy');
+        Route::put('/status/{id}',      'Web\Admin\DriversController@status')->name('drivers.status');
+    });
 });
