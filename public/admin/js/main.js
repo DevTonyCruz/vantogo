@@ -474,7 +474,7 @@ function ($) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\repositorios\base-laravel\resources\admin\js\main.js */"./resources/admin/js/main.js");
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\repositorios\vantogo\resources\admin\js\main.js */"./resources/admin/js/main.js");
 
 
 /***/ })

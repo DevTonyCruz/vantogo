@@ -1,19 +1,19 @@
 [{
         "name": "Cruz Antonio",
         "rol_id": 1,
-        "email": "root@arca.test",
+        "email": "root@vantogo.test",
         "password": "root123"
     },
     {
         "name": "Juan Perez",
         "rol_id": 2,
-        "email": "dev@arca.test",
+        "email": "dev@vantogo.test",
         "password": "dev123"
     },
     {
         "name": "Jose Lopez",
         "rol_id": 3,
-        "email": "admin@arca.test",
+        "email": "admin@vantogo.test",
         "password": "admin123"
     }
 ]

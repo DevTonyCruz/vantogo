@@ -24,7 +24,7 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('logout', 'Web\Admin\Auth\LoginController@logout')->name('admin.logout');
 
     // Registration Routes
-    Route::get('register', 'Web\Admin\Auth\RegisterController@showRegistrationForm')->name('admin.register');
+    //Route::get('register', 'Web\Admin\Auth\RegisterController@showRegistrationForm')->name('admin.register');
     Route::post('register', 'Web\Admin\Auth\RegisterController@register');
 
     // Password Reset
@@ -80,32 +80,6 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'permission']], func
         Route::put('/status/{id}',      'Web\Admin\ConfigurationsController@status')->name('configuration.status');
     });
 
-    Route::group(['prefix' => 'categories'], function () {
-        Route::get('/',                 'Web\Admin\CategoriesController@index')->name('categories.index');
-        Route::get('/create',           'Web\Admin\CategoriesController@create')->name('categories.create');
-        Route::post('/',                'Web\Admin\CategoriesController@store')->name('categories.store');
-        Route::get('/{id}',             'Web\Admin\CategoriesController@show')->name('categories.show');
-        Route::get('/{id}/edit',        'Web\Admin\CategoriesController@edit')->name('categories.edit');
-        Route::put('/{id}',             'Web\Admin\CategoriesController@update')->name('categories.update');
-        Route::delete('/{id}',          'Web\Admin\CategoriesController@destroy')->name('categories.destroy');
-        Route::put('/status/{id}',      'Web\Admin\CategoriesController@status')->name('categories.status');
-    });
-
-    Route::group(['prefix' => 'products'], function () {
-        Route::get('/',                 'Web\Admin\ProductsController@index')->name('products.index');
-        Route::get('/create',           'Web\Admin\ProductsController@create')->name('products.create');
-        Route::post('/',                'Web\Admin\ProductsController@store')->name('products.store');
-        Route::get('/{id}',             'Web\Admin\ProductsController@show')->name('products.show');
-        Route::get('/{id}/edit',        'Web\Admin\ProductsController@edit')->name('products.edit');
-        Route::put('/{id}',             'Web\Admin\ProductsController@update')->name('products.update');
-        Route::delete('/{id}',          'Web\Admin\ProductsController@destroy')->name('products.destroy');
-        Route::put('/status/{id}',      'Web\Admin\ProductsController@status')->name('products.status');
-        Route::get('/images/{id}',      'Web\Admin\ProductsController@imagesCreate')->name('products.images');
-        Route::post('/images',          'Web\Admin\ProductsController@imagesSave')->name('products.saveImages');
-        Route::delete('/images/{id}',   'Web\Admin\ProductsController@imagesDelete')->name('products.imagesDelete');
-        Route::put('/images/status/{id}','Web\Admin\ProductsController@imagesStatus')->name('products.statusImages');
-    });
-
     Route::group(['prefix' => 'topics'], function () {
         Route::get('/',                 'Web\Admin\TopicsController@index')->name('topics.index');
         Route::get('/create',           'Web\Admin\TopicsController@create')->name('topics.create');
@@ -126,17 +100,6 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'permission']], func
         Route::put('/{id}',             'Web\Admin\FaqsController@update')->name('faqs.update');
         Route::delete('/{id}',          'Web\Admin\FaqsController@destroy')->name('faqs.destroy');
         Route::put('/status/{id}',      'Web\Admin\FaqsController@status')->name('faqs.status');
-    });
-
-    Route::group(['prefix' => 'banners'], function () {
-        Route::get('/',                 'Web\Admin\BannersController@index')->name('banners.index');
-        Route::get('/create',           'Web\Admin\BannersController@create')->name('banners.create');
-        Route::post('/',                'Web\Admin\BannersController@store')->name('banners.store');
-        Route::get('/{id}',             'Web\Admin\BannersController@show')->name('banners.show');
-        Route::get('/{id}/edit',        'Web\Admin\BannersController@edit')->name('banners.edit');
-        Route::put('/{id}',             'Web\Admin\BannersController@update')->name('banners.update');
-        Route::delete('/{id}',          'Web\Admin\BannersController@destroy')->name('banners.destroy');
-        Route::put('/status/{id}',      'Web\Admin\BannersController@status')->name('banners.status');
     });
 
     Route::group(['prefix' => 'pages'], function () {

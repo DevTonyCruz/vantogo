@@ -9,7 +9,10 @@
             <!-- Logo -->
             <div class="auth-brand text-center text-lg-left">
                 <a href="{{ route('admin.login') }}">
-                    <span><img src="{{ asset('admin/images/logo-light.png') }}" alt="" height="18"></span>
+                    <span>
+                        <!-- <img src="{{ asset('admin/images/logo-light.png') }}" alt="" height="18"> -->
+                        <h1><b>LOGO</b></h1>
+                    </span>
                 </a>
             </div>
 

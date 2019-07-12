@@ -5,10 +5,12 @@
         <!-- LOGO -->
         <a href="index.html" class="logo text-center">
             <span class="logo-lg">
-                <img src="{{ asset('admin/images/logo.png') }}" alt="" height="16">
+                <!--<img src="{{ asset('admin/images/logo.png') }}" alt="" height="16">-->
+                <h1 class="text-white"><b>LOGO</b></h1>
             </span>
             <span class="logo-sm">
-                <img src="{{ asset('admin/images/logo_sm.png') }}" alt="" height="16">
+                <!--<img src="{{ asset('admin/images/logo_sm.png') }}" alt="" height="16">-->
+                <h1 class="text-white"><b>LOGO</b></h1>
             </span>
         </a>
 
@@ -34,39 +36,25 @@
                     <li>
                         <a href="{{ route('roles.index') }}">
                             Roles
-                            <span class="badge badge-success float-right">3</span>
+                            <span class="badge badge-success float-right">{{ $total_roles }}</span>
                         </a>
                     </li>
                     <li>
                         <a href="{{ route('users.index') }}">
                             Usuarios
-                            <span class="badge badge-success float-right">3</span>
+                            <span class="badge badge-success float-right">{{ $total_users }}</span>
                         </a>
                     </li>
                     <li>
                         <a href="{{ route('configuration.index') }}">
                             Configuraciones
-                            <span class="badge badge-success float-right">3</span>
+                            <span class="badge badge-success float-right">{{ $total_configurations }}</span>
                         </a>
                     </li>
                 </ul>
             </li>
 
             <li class="side-nav-title side-nav-item">SISTEMA</li>
-
-            <li class="side-nav-item">
-                <a href="{{ route('categories.index') }}" class="side-nav-link">
-                    <i class="dripicons-view-apps"></i>
-                    <span> Categorías </span>
-                </a>
-            </li>
-
-            <li class="side-nav-item">
-                <a href="{{ route('products.index') }}" class="side-nav-link">
-                    <i class="dripicons-view-apps"></i>
-                    <span> Productos </span>
-                </a>
-            </li>
 
             <li class="side-nav-item">
                 <a href="{{ route('topics.index') }}" class="side-nav-link">
@@ -89,26 +77,7 @@
                 </a>
             </li>
 
-            <li class="side-nav-item">
-                <a href="{{ route('banners.index') }}" class="side-nav-link">
-                    <i class="dripicons-view-apps"></i>
-                    <span> Banner </span>
-                </a>
-            </li>
-
         </ul>
-
-        <!-- Help Box -->
-        <div class="help-box text-white text-center">
-            <a href="javascript: void(0);" class="float-right close-btn text-white">
-                <i class="mdi mdi-close"></i>
-            </a>
-            <img src="{{ asset('admin/images/help-icon.svg') }}" height="90" alt="Helper Icon Image" />
-            <h5 class="mt-3">Unlimited Access</h5>
-            <p class="mb-3">Upgrade to plan to get access to unlimited reports</p>
-            <a href="javascript: void(0);" class="btn btn-outline-light btn-sm">Upgrade</a>
-        </div>
-        <!-- end Help Box -->
         <!-- End Sidebar -->
 
         <div class="clearfix"></div>

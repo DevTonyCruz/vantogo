@@ -9,5 +9,23 @@
         "slug": "aviso-de-privacidad",
         "length_text": 200,
         "content": ""
+    },
+    {
+        "name": "Titulo login",
+        "slug": "titulo-login",
+        "length_text": 20,
+        "content": "Titulo del login"
+    },
+    {
+        "name": "Subtitulo login",
+        "slug": "subtitulo-login",
+        "length_text": 50,
+        "content": "Subtitulo del login"
+    },
+    {
+        "name": "Nombre login",
+        "slug": "nombre-login",
+        "length_text": 50,
+        "content": "VanToGo Admin"
     }
 ]

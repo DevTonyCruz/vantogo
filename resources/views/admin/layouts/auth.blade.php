@@ -24,11 +24,11 @@
             <!-- Auth fluid right content -->
             <div class="auth-fluid-right text-center">
                 <div class="auth-user-testimonial">
-                    <h2 class="mb-3">¡Hablemos de TI!</h2>
-                    <p class="lead"><i class="mdi mdi-format-quote-open"></i> Si lo puedes imaginar, lo podemos programar. <i class="mdi mdi-format-quote-close"></i>
+                    <h2 class="mb-3">{{ $title_login }}</h2>
+                    <p class="lead"><i class="mdi mdi-format-quote-open"></i> {{ $subtitle_login }} <i class="mdi mdi-format-quote-close"></i>
                     </p>
                     <p>
-                        - Estrasol Admin
+                        {{ $name_login }} - Admin
                     </p>
                 </div> <!-- end auth-user-testimonial-->
             </div>
