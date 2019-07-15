@@ -1,0 +1,44 @@
+[{
+    "modulo": "Temas",
+    "data": [{
+            "name": "Listado",
+            "controller": "Temas",
+            "slug": "topics.index"
+        },
+        {
+            "name": "Crear",
+            "controller": "Temas",
+            "slug": "topics.create"
+        },
+        {
+            "name": "Guardar",
+            "controller": "Temas",
+            "slug": "topics.store"
+        },
+        {
+            "name": "Visualizar",
+            "controller": "Temas",
+            "slug": "topics.show"
+        },
+        {
+            "name": "Editar",
+            "controller": "Temas",
+            "slug": "topics.edit"
+        },
+        {
+            "name": "Actualizar",
+            "controller": "Temas",
+            "slug": "topics.update"
+        },
+        {
+            "name": "Borrar",
+            "controller": "Temas",
+            "slug": "topics.destroy"
+        },
+        {
+            "name": "Estatus",
+            "controller": "Temas",
+            "slug": "topics.status"
+        }
+    ]
+}]

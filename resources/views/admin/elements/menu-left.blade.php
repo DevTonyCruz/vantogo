@@ -73,6 +73,16 @@
                             Vehiculos
                         </a>
                     </li>
+                    <li>
+                        <a href="{{ route('routes.index') }}">
+                            Rutas
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ route('cars.index') }}">
+                            Viajes
+                        </a>
+                    </li>
                 </ul>
             </li>
 

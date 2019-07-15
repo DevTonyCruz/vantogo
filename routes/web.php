@@ -134,4 +134,26 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'permission']], func
         Route::delete('/{id}',          'Web\Admin\CarsController@destroy')->name('cars.destroy');
         Route::put('/status/{id}',      'Web\Admin\CarsController@status')->name('cars.status');
     });
+
+    Route::group(['prefix' => 'routes'], function () {
+        Route::get('/',                 'Web\Admin\RoutesController@index')->name('routes.index');
+        Route::get('/create',           'Web\Admin\RoutesController@create')->name('routes.create');
+        Route::post('/',                'Web\Admin\RoutesController@store')->name('routes.store');
+        Route::get('/{id}',             'Web\Admin\RoutesController@show')->name('routes.show');
+        Route::get('/{id}/edit',        'Web\Admin\RoutesController@edit')->name('routes.edit');
+        Route::put('/{id}',             'Web\Admin\RoutesController@update')->name('routes.update');
+        Route::delete('/{id}',          'Web\Admin\RoutesController@destroy')->name('routes.destroy');
+        Route::put('/status/{id}',      'Web\Admin\RoutesController@status')->name('routes.status');
+    });
+
+    Route::group(['prefix' => 'travels'], function () {
+        Route::get('/',                 'Web\Admin\TravelsController@index')->name('travels.index');
+        Route::get('/create',           'Web\Admin\TravelsController@create')->name('travels.create');
+        Route::post('/',                'Web\Admin\TravelsController@store')->name('travels.store');
+        Route::get('/{id}',             'Web\Admin\TravelsController@show')->name('travels.show');
+        Route::get('/{id}/edit',        'Web\Admin\TravelsController@edit')->name('travels.edit');
+        Route::put('/{id}',             'Web\Admin\TravelsController@update')->name('travels.update');
+        Route::delete('/{id}',          'Web\Admin\TravelsController@destroy')->name('travels.destroy');
+        Route::put('/status/{id}',      'Web\Admin\TravelsController@status')->name('travels.status');
+    });
 });

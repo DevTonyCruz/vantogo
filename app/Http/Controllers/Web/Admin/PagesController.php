@@ -51,6 +51,14 @@ class PagesController extends Controller
 
         $this->validate($request, $rules, $messages);
 
+        $wyswyg = strip_tags(str_replace(' ', '', $request->content));
+
+        if($wyswyg == ''){
+            return back()
+                ->withInput()
+                ->withErrors(['content' => 'El campo contenido no contiene información válida']);;
+        }
+
         try {
 
             $page = new Pages();
@@ -124,24 +132,24 @@ class PagesController extends Controller
         }
 
         try {
-            
+
             $page = Pages::where('name', $request->name)->where('id', '<>', $id)->count();
 
             if($page == 0){
                 $page = Pages::where('id', $id)->first();
-    
+
                 $page->name = $request->name;
                 $page->slug = str_replace(' ', '-', strtolower($request->name));
                 $page->content = $request->content;
-    
+
                 if($page->save()){
-    
+
                     return redirect()->route('pages.index');
                 }
-    
+
                 return back()->with('status', 'Por el momento no se puede realizar la acción solicitada.');
             }else{
-    
+
                 return back()
                 ->withInput()
                 ->withErrors(['name' => 'Ya existe una página con este nombre.']);

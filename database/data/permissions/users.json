@@ -2,42 +2,42 @@
     "modulo": "Usuarios",
     "data": [{
             "name": "Listado",
-            "controller": "Users",
+            "controller": "Usuarios",
             "slug": "users.index"
         },
         {
             "name": "Crear",
-            "controller": "Users",
+            "controller": "Usuarios",
             "slug": "users.create"
         },
         {
             "name": "Guardar",
-            "controller": "Users",
+            "controller": "Usuarios",
             "slug": "users.store"
         },
         {
             "name": "Visualizar",
-            "controller": "Users",
+            "controller": "Usuarios",
             "slug": "users.show"
         },
         {
             "name": "Editar",
-            "controller": "Users",
+            "controller": "Usuarios",
             "slug": "users.edit"
         },
         {
             "name": "Actualizar",
-            "controller": "Users",
+            "controller": "Usuarios",
             "slug": "users.update"
         },
         {
             "name": "Borrar",
-            "controller": "Users",
+            "controller": "Usuarios",
             "slug": "users.destroy"
         },
         {
             "name": "Estatus",
-            "controller": "Users",
+            "controller": "Usuarios",
             "slug": "users.status"
         }
     ]

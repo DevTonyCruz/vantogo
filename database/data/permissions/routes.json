@@ -1,0 +1,44 @@
+[{
+    "modulo": "Rutas",
+    "data": [{
+            "name": "Listado",
+            "controller": "Rutas",
+            "slug": "routes.index"
+        },
+        {
+            "name": "Crear",
+            "controller": "Rutas",
+            "slug": "routes.create"
+        },
+        {
+            "name": "Guardar",
+            "controller": "Rutas",
+            "slug": "routes.store"
+        },
+        {
+            "name": "Visualizar",
+            "controller": "Rutas",
+            "slug": "routes.show"
+        },
+        {
+            "name": "Editar",
+            "controller": "Rutas",
+            "slug": "routes.edit"
+        },
+        {
+            "name": "Actualizar",
+            "controller": "Rutas",
+            "slug": "routes.update"
+        },
+        {
+            "name": "Borrar",
+            "controller": "Rutas",
+            "slug": "routes.destroy"
+        },
+        {
+            "name": "Estatus",
+            "controller": "Rutas",
+            "slug": "routes.status"
+        }
+    ]
+}]

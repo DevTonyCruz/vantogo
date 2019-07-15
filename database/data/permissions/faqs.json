@@ -2,42 +2,42 @@
     "modulo": "Preguntas Frecuentes",
     "data": [{
             "name": "Listado",
-            "controller": "faqs",
+            "controller": "Faqs",
             "slug": "faqs.index"
         },
         {
             "name": "Crear",
-            "controller": "faqs",
+            "controller": "Faqs",
             "slug": "faqs.create"
         },
         {
             "name": "Guardar",
-            "controller": "faqs",
+            "controller": "Faqs",
             "slug": "faqs.store"
         },
         {
             "name": "Visualizar",
-            "controller": "faqs",
+            "controller": "Faqs",
             "slug": "faqs.show"
         },
         {
             "name": "Editar",
-            "controller": "faqs",
+            "controller": "Faqs",
             "slug": "faqs.edit"
         },
         {
             "name": "Actualizar",
-            "controller": "faqs",
+            "controller": "Faqs",
             "slug": "faqs.update"
         },
         {
             "name": "Borrar",
-            "controller": "faqs",
+            "controller": "Faqs",
             "slug": "faqs.destroy"
         },
         {
             "name": "Estatus",
-            "controller": "faqs",
+            "controller": "Faqs",
             "slug": "faqs.status"
         }
     ]

@@ -17,10 +17,18 @@ class PermissionsSeeder extends Seeder
         //se trunca la tabla
         Permissions::truncate();
 
-        $archivos = File::allFiles('database/data/permissions');
+        //$archivos = File::allFiles('database/data/permissions');
+        $dir = 'database/data/permissions/';
+
+        $archivos = [
+            "admin", "roles", "users", "configuration", "pages",
+            "faqs", "topics", "cars", "drivers", "routes",
+            "travels",
+        ];
 
         foreach($archivos as $archivo){
-            $file = $archivo->getPathname();
+            //$file = $archivo->getPathname();
+            $file = $dir . $archivo . '.json';
 
             //se obtienen los datos del archivo correspondiente y se parsean
             $json = File::get($file);

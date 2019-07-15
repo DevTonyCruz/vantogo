@@ -1,0 +1,44 @@
+[{
+    "modulo": "Viajes",
+    "data": [{
+            "name": "Listado",
+            "controller": "Viajes",
+            "slug": "travels.index"
+        },
+        {
+            "name": "Crear",
+            "controller": "Viajes",
+            "slug": "travels.create"
+        },
+        {
+            "name": "Guardar",
+            "controller": "Viajes",
+            "slug": "travels.store"
+        },
+        {
+            "name": "Visualizar",
+            "controller": "Viajes",
+            "slug": "travels.show"
+        },
+        {
+            "name": "Editar",
+            "controller": "Viajes",
+            "slug": "travels.edit"
+        },
+        {
+            "name": "Actualizar",
+            "controller": "Viajes",
+            "slug": "travels.update"
+        },
+        {
+            "name": "Borrar",
+            "controller": "Viajes",
+            "slug": "travels.destroy"
+        },
+        {
+            "name": "Estatus",
+            "controller": "Viajes",
+            "slug": "travels.status"
+        }
+    ]
+}]

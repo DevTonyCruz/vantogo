@@ -2,27 +2,27 @@
     "modulo": "Configuraciones",
     "data": [{
             "name": "Listado",
-            "controller": "Configurations",
+            "controller": "Configuraciones",
             "slug": "configuration.index"
         },
         {
             "name": "Editar",
-            "controller": "Configurations",
+            "controller": "Configuraciones",
             "slug": "configuration.edit"
         },
         {
             "name": "Mostrar",
-            "controller": "Configurations",
+            "controller": "Configuraciones",
             "slug": "configuration.show"
         },
         {
             "name": "Actualizar",
-            "controller": "Configurations",
+            "controller": "Configuraciones",
             "slug": "configuration.update"
         },
         {
             "name": "Estatus",
-            "controller": "Configurations",
+            "controller": "Configuraciones",
             "slug": "configuration.status"
         }
     ]
