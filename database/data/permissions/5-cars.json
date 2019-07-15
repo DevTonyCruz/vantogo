@@ -1,0 +1,44 @@
+[{
+    "modulo": "Vehiculos",
+    "data": [{
+            "name": "Listado",
+            "controller": "cars",
+            "slug": "cars.index"
+        },
+        {
+            "name": "Crear",
+            "controller": "cars",
+            "slug": "cars.create"
+        },
+        {
+            "name": "Guardar",
+            "controller": "cars",
+            "slug": "cars.store"
+        },
+        {
+            "name": "Visualizar",
+            "controller": "cars",
+            "slug": "cars.show"
+        },
+        {
+            "name": "Editar",
+            "controller": "cars",
+            "slug": "cars.edit"
+        },
+        {
+            "name": "Actualizar",
+            "controller": "cars",
+            "slug": "cars.update"
+        },
+        {
+            "name": "Borrar",
+            "controller": "cars",
+            "slug": "cars.destroy"
+        },
+        {
+            "name": "Estatus",
+            "controller": "cars",
+            "slug": "cars.status"
+        }
+    ]
+}]

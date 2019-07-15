@@ -134,12 +134,12 @@
                                     Elige un archivo
                                 </label>
                             </div>
+                            @if(!is_null($driver->photo))
+                            <a href="{{ asset($driver->photo) }}" download="" class="text-small">
+                                <small>{{ $driver->name . ' ' . $driver->first_last_name . ' ' . $driver->second_last_name }}</small>
+                            </a>
+                            @endif
                         </div>
-                        @if(!is_null($driver->photo))
-                        <a href="{{ asset($driver->photo) }}" download="" class="text-small">
-                            {{ $driver->name . ' ' . $driver->first_last_name . ' ' . $driver->second_last_name }}
-                        </a>
-                        @endif
                     </div>
 
                     <div class="form-group mb-0 justify-content-end row">

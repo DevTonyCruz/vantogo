@@ -87,7 +87,7 @@ class DriversController extends Controller
 
                 return back()->with('status', 'Por el momento no se puede realizar la acción solicitada.');
             } else {
-                return back()->with('status', 'Ya existe un chofer con esta licencia.');
+                return back()->with('status', 'Ya existe un registro con estos datos.');
             }
         } catch (QueryException $e) {
             return back()->with('status', $e->getMessage());
@@ -179,7 +179,7 @@ class DriversController extends Controller
 
                 return back()->with('status', 'Por el momento no se puede realizar la acción solicitada.');
             } else {
-                return back()->with('status', 'Ya existe un chofer con esta licencia.');
+                return back()->with('status', 'Ya existe un registro con estos datos.');
             }
         } catch (QueryException $e) {
             return back()->with('status', $e->getMessage());

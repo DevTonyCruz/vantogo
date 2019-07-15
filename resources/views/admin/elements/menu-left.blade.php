@@ -68,6 +68,11 @@
                             Choferes
                         </a>
                     </li>
+                    <li>
+                        <a href="{{ route('cars.index') }}">
+                            Vehiculos
+                        </a>
+                    </li>
                 </ul>
             </li>
 

@@ -40,13 +40,35 @@ class GlobalVariablesProvider extends ServiceProvider
         $total_clients = (\Schema::hasTable('users')) ? User::where('rol_id', 2)->count() : 0;
         view()->share('total_clients', $total_clients);
 
-        $title_login = (\Schema::hasTable('pages')) ? Pages::where('slug', 'titulo-login')->first() : (object) ['name' => ''];
-        view()->share('title_login', $title_login->name);
+        $pages = '';
+        $title_login = '';
+        if(\Schema::hasTable('pages')){
+            $pages = Pages::where('slug', 'titulo-login')->first();
+            if($pages){
+                $title_login = $pages->name;
+            }
+        }
 
-        $subtitle_login = (\Schema::hasTable('pages')) ? Pages::where('slug', 'subtitulo-login')->first() : (object) ['name' => ''];
-        view()->share('subtitle_login', $subtitle_login->name);
+        $subtitle_login = '';
+        if(\Schema::hasTable('pages')){
+            $pages = Pages::where('slug', 'subtitulo-login')->first();
+            if($pages){
+                $subtitle_login = $pages->name;
+            }
+        }
 
-        $name_login = (\Schema::hasTable('pages')) ? Pages::where('slug', 'nombre-login')->first() : (object) ['name' => ''];
-        view()->share('name_login', $name_login->name);
+        $name_login = '';
+        if(\Schema::hasTable('pages')){
+            $pages = Pages::where('slug', 'nombre-login')->first();
+            if($pages){
+                $name_login = $pages->name;
+            }
+        }
+
+        view()->share('title_login', $title_login);
+        view()->share('subtitle_login', $subtitle_login);
+        view()->share('name_login', $name_login);
+
+
     }
 }

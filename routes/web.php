@@ -123,4 +123,15 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'permission']], func
         Route::delete('/{id}',          'Web\Admin\DriversController@destroy')->name('drivers.destroy');
         Route::put('/status/{id}',      'Web\Admin\DriversController@status')->name('drivers.status');
     });
+
+    Route::group(['prefix' => 'cars'], function () {
+        Route::get('/',                 'Web\Admin\CarsController@index')->name('cars.index');
+        Route::get('/create',           'Web\Admin\CarsController@create')->name('cars.create');
+        Route::post('/',                'Web\Admin\CarsController@store')->name('cars.store');
+        Route::get('/{id}',             'Web\Admin\CarsController@show')->name('cars.show');
+        Route::get('/{id}/edit',        'Web\Admin\CarsController@edit')->name('cars.edit');
+        Route::put('/{id}',             'Web\Admin\CarsController@update')->name('cars.update');
+        Route::delete('/{id}',          'Web\Admin\CarsController@destroy')->name('cars.destroy');
+        Route::put('/status/{id}',      'Web\Admin\CarsController@status')->name('cars.status');
+    });
 });
