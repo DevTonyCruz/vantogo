@@ -1,0 +1,29 @@
+[{
+    "modulo": "Perfil",
+    "data": [{
+            "name": "Perfil",
+            "controller": "Perfil",
+            "slug": "profile.index"
+        },
+        {
+            "name": "Editar",
+            "controller": "Perfil",
+            "slug": "profile.edit"
+        },
+        {
+            "name": "Actualizar",
+            "controller": "Perfil",
+            "slug": "profile.update"
+        },
+        {
+            "name": "Actualizar Contraseña",
+            "controller": "Perfil",
+            "slug": "profile.password"
+        },
+        {
+            "name": "Estatus",
+            "controller": "Perfil",
+            "slug": "profile.status"
+        }
+    ]
+}]
