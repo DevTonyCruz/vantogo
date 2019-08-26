@@ -49,7 +49,7 @@
                                     <th scope="col">#</th>
                                     <th scope="col">Nombre</th>
                                     <th scope="col">Email</th>
-                                    <th scope="col">Rol</th>
+                                    <th scope="col">Puesto</th>
                                     <th scope="col">Activo</th>
                                     <th scope="col">Fecha de creación</th>
                                     <th scope="col">Acciones</th>
@@ -62,7 +62,7 @@
                                     <td>{{ $user->name . ' ' . $user->first_last_name . ' ' . $user->second_last_name }}
                                     </td>
                                     <td>{{ $user->email }}</td>
-                                    <td>{{ $user->phone }}</td>
+                                    <td>{{ $user->rol->name }}</td>
                                     <td>
                                         @php
                                         $checked = ""
@@ -88,20 +88,17 @@
                                     <td>{{ $user->created_at }}</td>
                                     <td>
                                         <a href="{{ url('admin/users/' . $user->id) }}" class="action-icon" title="Ver">
-                                            <i class="mdi mdi-eye-outline"></i></a>
-                                        <a href="{{ url('admin/users/' . $user->id . '/edit') }}" class="action-icon"
-                                            title="Ver">
-                                            <i class="mdi mdi-pencil"></i></a>
-                                        <a href="javascript:void(0)"
-                                            onclick="document.getElementById('form_delete_{{ $user->id }}').submit();"
-                                            class="action-icon" title="Ver"> <i
-                                                class="mdi mdi-trash-can-outline"></i></a>
+                                            <i class="mdi mdi-eye-outline"></i>
+                                        </a>
+                                        <a href="{{ url('admin/users/' . $user->id . '/edit') }}" class="action-icon" title="Editar">
+                                            <i class="mdi mdi-pencil"></i>
+                                        </a>
 
-                                        <form method="POST" id="form_delete_{{ $user->id }}" class="inline"
-                                            action="{{ url('admin/users/' . $user->id) }}">
-                                            @method('DELETE')
-                                            @csrf
-                                        </form>
+                                        @if (Auth::user()->rol->slug == 'root')
+                                        <a href="javascript:void(0)" onclick="custom.modal_action_delete('{{ url('admin/users/' . $user->id) }}')" class="action-icon" title="Eliminar">
+                                            <i class=" mdi mdi-trash-can-outline"></i>
+                                        </a>
+                                        @endif
                                     </td>
                                 </tr>
 
@@ -115,15 +112,6 @@
         </div><!-- end col-->
     </div>
 </div>
-@endsection
 
-@section('js')
-<script type="text/javascript" defer>
-    window.onload=function() {
-        $("#datatable").DataTable({
-            language: {
-                "url": "//cdn.datatables.net/plug-ins/1.10.19/i18n/Spanish.json"
-            }});
-	}
-</script>
+@include('admin.elements.delete-modal')
 @endsection

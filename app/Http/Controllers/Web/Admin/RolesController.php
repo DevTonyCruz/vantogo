@@ -64,6 +64,7 @@ class RolesController extends Controller
                 $rol = new Roles;
 
                 $rol->name = $request->name;
+                $rol->slug = str_replace(' ', '-', strtolower($request->name));
                 $rol->description = $request->description;
 
                 $rol->save();
@@ -130,6 +131,7 @@ class RolesController extends Controller
                 $rol = Roles::where('id', $id)->first();
 
                 $rol->name = $request->name;
+                $rol->slug = str_replace(' ', '-', strtolower($request->name));
                 $rol->description = $request->description;
 
                 $rol->save();

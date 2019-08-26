@@ -19,21 +19,9 @@
                 </div>
 
                 <!-- item-->
-                <a href="javascript:void(0);" class="dropdown-item notify-item">
+                <a href="{{ route('profile.index') }}" class="dropdown-item notify-item">
                     <i class="mdi mdi-account-circle mr-1"></i>
                     <span>Mi perfil</span>
-                </a>
-
-                <!-- item-->
-                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                    <i class="mdi mdi-account-edit mr-1"></i>
-                    <span>Configuraciones</span>
-                </a>
-
-                <!-- item-->
-                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                    <i class="mdi mdi-lifebuoy mr-1"></i>
-                    <span>Soporte</span>
                 </a>
 
                 <!-- item-->

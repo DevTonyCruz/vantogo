@@ -24,6 +24,7 @@ class RolesSeeder extends Seeder
         foreach ($roles as $rol) {
             Roles::create([
                 'name' => $rol->name,
+                'slug' => $rol->slug,
                 'description' => $rol->description,
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')

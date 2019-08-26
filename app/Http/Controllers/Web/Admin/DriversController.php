@@ -73,6 +73,7 @@ class DriversController extends Controller
                 $driver->second_last_name = $request->second_last_name;
                 $driver->email = $request->email;
                 $driver->phone = $request->phone;
+                $driver->direction = $request->direction;
                 $driver->license = $request->license;
 
                 if ($driver->save()) {
@@ -160,6 +161,7 @@ class DriversController extends Controller
                 $driver->second_last_name = $request->second_last_name;
                 $driver->email = $request->email;
                 $driver->phone = $request->phone;
+                $driver->direction = $request->direction;
                 $driver->license = $request->license;
 
                 if ($driver->save()) {

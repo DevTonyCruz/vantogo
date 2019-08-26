@@ -79,7 +79,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="{{ route('cars.index') }}">
+                        <a href="{{ route('travels.index') }}">
                             Viajes
                         </a>
                     </li>

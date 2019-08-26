@@ -145,7 +145,7 @@
   };
   /**
    * Initlizes the select2
-  */
+   */
 
 
   AdvanceFormApp.prototype.initSelect2 = function () {
@@ -154,7 +154,7 @@
   },
   /**
    * Initlized mask
-  */
+   */
   AdvanceFormApp.prototype.initMask = function () {
     $('[data-toggle="input-mask"]').each(function (idx, obj) {
       var maskFormat = $(obj).data("maskFormat");
@@ -237,7 +237,7 @@
   },
   /**
    * Initilize
-  */
+   */
   AdvanceFormApp.prototype.init = function () {
     var $this = this;
     this.initSelect2();
@@ -325,6 +325,23 @@
 }(window.jQuery), function ($) {
   'use strict';
 
+  $('.wyswyg-content').summernote({
+    height: 150,
+    toolbar: [// [groupName, [list of button]]
+    ['style', ['bold', 'italic', 'underline']], ['font', ['strikethrough']], ['fontsize', ['fontsize']], ['color', ['color']]]
+  });
+  $('.slug').on('keyup', function () {
+    var slug = custom.string_to_slug(this.value);
+    $("#slug").val(slug);
+  });
+  $("#datatable").DataTable({
+    language: {
+      "url": "//cdn.datatables.net/plug-ins/1.10.19/i18n/Spanish.json"
+    }
+  });
+}(window.jQuery), function ($) {
+  'use strict';
+
   var App = function App() {
     this.$body = $('body'), this.$window = $(window);
   };
@@ -346,7 +363,7 @@
   },
   /**
    * Initlizes the menu - top and sidebar
-  */
+   */
   App.prototype.initMenu = function () {
     var $this = this; // Left menu collapse
 
@@ -431,7 +448,7 @@
   },
   /**
    * Init the layout - with broad sidebar or compact side bar
-  */
+   */
   App.prototype.initLayout = function () {
     // in case of small size, add class enlarge to have minimal menu
     if (this.$window.width() >= 768 && this.$window.width() <= 1028) {

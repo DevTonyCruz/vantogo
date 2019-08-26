@@ -92,7 +92,7 @@
                         <div class="col-9">
                             <input type="text" id="phone" name="phone"
                                 class="form-control{{ $errors->has('phone') ? ' is-invalid' : '' }}"
-                                placeholder="Ingrese un teléfono" value="{{ old('phone') }}" required>
+                                placeholder="Ingrese un teléfono" value="{{ old('phone') }}">
                             @if ($errors->has('phone'))
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $errors->first('phone') }}</strong>
@@ -102,11 +102,25 @@
                     </div>
 
                     <div class="form-group row mb-3">
-                        <label for="license" class="col-3 col-form-label">Licencia</label>
+                        <label for="direction" class="col-3 col-form-label">Dirección</label>
+                        <div class="col-9">
+                            <input type="text" id="direction" name="direction"
+                                class="form-control{{ $errors->has('direction') ? ' is-invalid' : '' }}"
+                                placeholder="Ingrese una dirección" value="{{ old('direction') }}">
+                            @if ($errors->has('direction'))
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $errors->first('direction') }}</strong>
+                            </span>
+                            @endif
+                        </div>
+                    </div>
+
+                    <div class="form-group row mb-3">
+                        <label for="license" class="col-3 col-form-label">No. de licencia</label>
                         <div class="col-9">
                             <input type="text" id="license" name="license"
                                 class="form-control{{ $errors->has('license') ? ' is-invalid' : '' }}"
-                                placeholder="Ingrese una licencia" value="{{ old('license') }}" required>
+                                placeholder="Ingrese una licencia" value="{{ old('license') }}">
                             @if ($errors->has('license'))
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $errors->first('license') }}</strong>
@@ -116,7 +130,7 @@
                     </div>
 
                     <div class="form-group row mb-3">
-                        <label for="photo" class="col-3 col-form-label">Imagen</label>
+                        <label for="photo" class="col-3 col-form-label">Imagen de licencia</label>
                         <div class="col-9">
                             <div class="custom-file">
                                 <input type="file" id="photo" name="photo"

@@ -13,6 +13,11 @@ export function modal_permissions() {
     $('#modal-permiso').modal();
 }
 
+export function modal_action_delete(url) {
+    $("#form-delete").attr('action', url);
+    $('#modal-action-delete').modal();
+}
+
 $('#select-all').click(function(event) {
 
     if (this.checked) {

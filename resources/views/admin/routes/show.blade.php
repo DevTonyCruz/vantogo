@@ -44,7 +44,7 @@
                         <label class="col-3 col-form-label">Precio</label>
                         <label class="col-9 col-form-label">${{ $route->price }}</label>
 
-                        <label class="col-3 col-form-label">Kilometros</label>
+                        <label class="col-3 col-form-label">Distancia</label>
                         <label class="col-9 col-form-label">{{ $route->kilometer }}</label>
 
                         <label class="col-3 col-form-label">Tiempo</label>

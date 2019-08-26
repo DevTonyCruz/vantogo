@@ -86,24 +86,20 @@
                                     <td>{{ $rol->created_at }}</td>
                                     <td>
                                         <a href="{{ url('admin/roles/' . $rol->id) }}" class="action-icon" title="Ver">
-                                            <i class=" mdi mdi-eye-outline"></i></a>
-                                        <a href="{{ url('admin/roles/' . $rol->id .'/edit') }}" class="action-icon"
-                                            title="Ver">
-                                            <i class=" mdi mdi-pencil"></i></a>
-                                        <a href="{{ url('admin/roles/permission/' . $rol->id) }}" class="action-icon"
-                                            title="Permisos"> <i class=" mdi mdi-lock-open-outline"></i></a>
-
+                                            <i class=" mdi mdi-eye-outline"></i>
+                                        </a>
+                                        <a href="{{ url('admin/roles/' . $rol->id .'/edit') }}" class="action-icon" title="Editar">
+                                            <i class=" mdi mdi-pencil"></i>
+                                        </a>
+                                        <a href="{{ url('admin/roles/permission/' . $rol->id) }}" class="action-icon" title="Permisos">
+                                            <i class=" mdi mdi-lock-open-outline"></i>
+                                        </a>
                                         @if($rol->id != 1)
                                         <a href="javascript:void(0)"
-                                            onclick="document.getElementById('form_delete_{{ $rol->id }}').submit();"
-                                            class="action-icon" title="Ver"> <i
-                                                class=" mdi mdi-trash-can-outline"></i></a>
-
-                                        <form method="POST" id="form_delete_{{ $rol->id }}" class="inline"
-                                            action="{{ url('admin/roles/' . $rol->id) }}">
-                                            @method('DELETE')
-                                            @csrf
-                                        </form>
+                                            onclick="custom.modal_action_delete('{{ url('admin/roles/' . $rol->id) }}')"
+                                            class="action-icon" title="Eliminar">
+                                            <i class=" mdi mdi-trash-can-outline"></i>
+                                        </a>
                                         @endif
                                     </td>
                                 </tr>
@@ -118,16 +114,6 @@
         </div><!-- end col-->
     </div>
 </div>
-@endsection
 
-@section('js')
-<script type="text/javascript" defer>
-
-    window.onload=function() {
-        $("#datatable").DataTable({
-            language: {
-                "url": "//cdn.datatables.net/plug-ins/1.10.19/i18n/Spanish.json"
-            }});
-	}
-</script>
+@include('admin.elements.delete-modal')
 @endsection

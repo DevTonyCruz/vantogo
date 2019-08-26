@@ -9,13 +9,13 @@
                 <div class="page-title-right">
                     <ol class="breadcrumb m-0">
                         <li class="breadcrumb-item">
-                            <a href="{{ route('routes.index') }}">Vehiculos</a>
+                            <a href="{{ url('admin/routes') }}">Rutas</a>
                         </li>
-                        <li class="breadcrumb-item active">Principal</li>
+                        <li class="breadcrumb-item active">Mostrar</li>
                     </ol>
                 </div>
                 <h4 class="page-title">
-                    <a href="{{ route('routes.index') }}">Vehiculos</a>
+                    <a href="{{ url('admin/routes') }}">Rutas</a>
                 </h4>
             </div>
         </div>
@@ -51,6 +51,7 @@
                                     <th scope="col">Origen</th>
                                     <th scope="col">Destino</th>
                                     <th scope="col">Precio</th>
+                                    <th scope="col">Tiempo</th>
                                     <th scope="col">Activo</th>
                                     <th scope="col">Acciones</th>
                                 </tr>
@@ -63,6 +64,7 @@
                                     <td>{{ $route->origin }}</td>
                                     <td>{{ $route->destination }}</td>
                                     <td>{{ $route->price }}</td>
+                                    <td>{{ $route->hour }} Hora {{ $route->minute }} Minutos</td>
                                     <td>
                                         @php
                                         $checked = ""
@@ -86,21 +88,17 @@
                                         </form>
                                     </td>
                                     <td>
-                                        <a href="{{ url('admin/routes/' . $route->id) }}" class="action-icon" title="Ver">
+                                        <a href="{{ url('admin/routes/' . $route->id) }}" class="action-icon"
+                                            title="Ver">
                                             <i class="mdi mdi-eye-outline"></i></a>
                                         <a href="{{ url('admin/routes/' . $route->id . '/edit') }}" class="action-icon"
-                                            title="Ver">
+                                            title="Editar">
                                             <i class="mdi mdi-pencil"></i></a>
                                         <a href="javascript:void(0)"
-                                            onclick="document.getElementById('form_delete_{{ $route->id }}').submit();"
-                                            class="action-icon" title="Editar"> <i
-                                                class="mdi mdi-trash-can-outline"></i></a>
-
-                                        <form method="POST" id="form_delete_{{ $route->id }}" class="inline"
-                                            action="{{ url('admin/routes/' . $route->id) }}">
-                                            @method('DELETE')
-                                            @csrf
-                                        </form>
+                                            onclick="custom.modal_action_delete('{{ url('admin/routes/' . $route->id) }}')"
+                                            class="action-icon" title="Eliminar">
+                                            <i class=" mdi mdi-trash-can-outline"></i>
+                                        </a>
                                     </td>
                                 </tr>
 
@@ -114,15 +112,6 @@
         </div><!-- end col-->
     </div>
 </div>
-@endsection
 
-@section('js')
-<script type="text/javascript" defer>
-    window.onload=function() {
-        $("#datatable").DataTable({
-            language: {
-                "url": "//cdn.datatables.net/plug-ins/1.10.19/i18n/Spanish.json"
-            }});
-	}
-</script>
+@include('admin.elements.delete-modal')
 @endsection

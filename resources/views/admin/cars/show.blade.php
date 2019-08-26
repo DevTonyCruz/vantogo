@@ -38,6 +38,9 @@
                         <label class="col-3 col-form-label">Modelo</label>
                         <label class="col-9 col-form-label">{{ $car->model }}</label>
 
+                        <label class="col-3 col-form-label">Color</label>
+                        <label class="col-9 col-form-label">{{ $car->color }}</label>
+
                         <label class="col-3 col-form-label">Placas</label>
                         <label class="col-9 col-form-label">{{ $car->registration }}</label>
 

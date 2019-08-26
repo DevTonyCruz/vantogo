@@ -64,6 +64,7 @@ class CarsController extends Controller
                 $cars = new Cars();
                 $cars->brand = $request->brand;
                 $cars->model = $request->model;
+                $cars->color = $request->color;
                 $cars->registration = $request->registration;
                 $cars->capacity = $request->capacity;
 
@@ -140,6 +141,7 @@ class CarsController extends Controller
                 $cars = Cars::where('id', $id)->first();
                 $cars->brand = $request->brand;
                 $cars->model = $request->model;
+                $cars->color = $request->color;
                 $cars->registration = $request->registration;
                 $cars->capacity = $request->capacity;
 

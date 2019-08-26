@@ -58,6 +58,20 @@
                     </div>
 
                     <div class="form-group row mb-3">
+                        <label for="color" class="col-3 col-form-label">Color</label>
+                        <div class="col-9">
+                            <input type="text" id="color" name="color"
+                                class="form-control{{ $errors->has('color') ? ' is-invalid' : '' }}"
+                                placeholder="Ingrese el color" value="{{ old('color') }}">
+                            @if ($errors->has('color'))
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $errors->first('color') }}</strong>
+                            </span>
+                            @endif
+                        </div>
+                    </div>
+
+                    <div class="form-group row mb-3">
                         <label for="registration" class="col-3 col-form-label">Placas</label>
                         <div class="col-9">
                             <input type="text" id="registration" name="registration"

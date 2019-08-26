@@ -50,6 +50,7 @@
                                     <th scope="col">Marca</th>
                                     <th scope="col">Modelo</th>
                                     <th scope="col">Placas</th>
+                                    <th scope="col">Color</th>
                                     <th scope="col">Capacidad</th>
                                     <th scope="col">Activo</th>
                                     <th scope="col">Acciones</th>
@@ -63,6 +64,7 @@
                                     </td>
                                     <td>{{ $car->model }}</td>
                                     <td>{{ $car->registration }}</td>
+                                    <td>{{ $car->color }}</td>
                                     <td>{{ $car->capacity }}</td>
                                     <td>
                                         @php
@@ -88,20 +90,17 @@
                                     </td>
                                     <td>
                                         <a href="{{ url('admin/cars/' . $car->id) }}" class="action-icon" title="Ver">
-                                            <i class="mdi mdi-eye-outline"></i></a>
+                                            <i class="mdi mdi-eye-outline"></i>
+                                        </a>
                                         <a href="{{ url('admin/cars/' . $car->id . '/edit') }}" class="action-icon"
-                                            title="Ver">
-                                            <i class="mdi mdi-pencil"></i></a>
+                                            title="Editar">
+                                            <i class="mdi mdi-pencil"></i>
+                                        </a>
                                         <a href="javascript:void(0)"
-                                            onclick="document.getElementById('form_delete_{{ $car->id }}').submit();"
-                                            class="action-icon" title="Editar"> <i
-                                                class="mdi mdi-trash-can-outline"></i></a>
-
-                                        <form method="POST" id="form_delete_{{ $car->id }}" class="inline"
-                                            action="{{ url('admin/cars/' . $car->id) }}">
-                                            @method('DELETE')
-                                            @csrf
-                                        </form>
+                                            onclick="custom.modal_action_delete('{{ url('admin/cars/' . $car->id) }}')"
+                                            class="action-icon" title="Eliminar">
+                                            <i class=" mdi mdi-trash-can-outline"></i>
+                                        </a>
                                     </td>
                                 </tr>
 
@@ -115,15 +114,6 @@
         </div><!-- end col-->
     </div>
 </div>
-@endsection
 
-@section('js')
-<script type="text/javascript" defer>
-    window.onload=function() {
-        $("#datatable").DataTable({
-            language: {
-                "url": "//cdn.datatables.net/plug-ins/1.10.19/i18n/Spanish.json"
-            }});
-	}
-</script>
+@include('admin.elements.delete-modal')
 @endsection

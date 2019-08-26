@@ -95,10 +95,24 @@
                         <div class="col-9">
                             <input type="text" id="phone" name="phone"
                                 class="form-control{{ $errors->has('phone') ? ' is-invalid' : '' }}"
-                                placeholder="Ingrese un teléfono" value="{{ $driver->phone }}" required>
+                                placeholder="Ingrese un teléfono" value="{{ $driver->phone }}">
                             @if ($errors->has('phone'))
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $errors->first('phone') }}</strong>
+                            </span>
+                            @endif
+                        </div>
+                    </div>
+
+                    <div class="form-group row mb-3">
+                        <label for="direction" class="col-3 col-form-label">Dirección</label>
+                        <div class="col-9">
+                            <input type="text" id="direction" name="direction"
+                                class="form-control{{ $errors->has('direction') ? ' is-invalid' : '' }}"
+                                placeholder="Ingrese una dirección" value="{{ $driver->direction }}">
+                            @if ($errors->has('direction'))
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $errors->first('direction') }}</strong>
                             </span>
                             @endif
                         </div>
@@ -109,7 +123,7 @@
                         <div class="col-9">
                             <input type="text" id="license" name="license"
                                 class="form-control{{ $errors->has('license') ? ' is-invalid' : '' }}"
-                                placeholder="Ingrese una licencia" value="{{ $driver->license }}" required>
+                                placeholder="Ingrese una licencia" value="{{ $driver->license }}">
                             @if ($errors->has('license'))
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $errors->first('license') }}</strong>

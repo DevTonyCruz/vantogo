@@ -42,6 +42,9 @@
                         <label class="col-3 col-form-label">Teléfono</label>
                         <label class="col-9 col-form-label">{{ $driver->phone }}</label>
 
+                        <label class="col-3 col-form-label">Dirección</label>
+                        <label class="col-9 col-form-label">{{ $driver->direction }}</label>
+
                         <label class="col-3 col-form-label">Licencia</label>
                         <label class="col-9 col-form-label">{{ $driver->license }}</label>
 

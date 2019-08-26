@@ -156,4 +156,14 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'permission']], func
         Route::delete('/{id}',          'Web\Admin\TravelsController@destroy')->name('travels.destroy');
         Route::put('/status/{id}',      'Web\Admin\TravelsController@status')->name('travels.status');
     });
+
+    Route::group(['prefix' => 'profile'], function () {
+        Route::get('/',                 'Web\Admin\ProfileController@index')->name('profile.index');
+        /*Route::get('/create',           'Web\Admin\ProfileController@create')->name('profile.create');
+        Route::post('/',                'Web\Admin\ProfileController@store')->name('profile.store');
+        Route::get('/{id}/edit',        'Web\Admin\ProfileController@edit')->name('profile.edit');
+        Route::put('/{id}',             'Web\Admin\ProfileController@update')->name('profile.update');
+        Route::delete('/{id}',          'Web\Admin\ProfileController@destroy')->name('profile.destroy');
+        Route::put('/status/{id}',      'Web\Admin\ProfileController@status')->name('profile.status');*/
+    });
 });

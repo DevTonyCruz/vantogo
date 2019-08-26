@@ -19,6 +19,7 @@ class CreateCarsTable extends Migration
             $table->string('model');
             $table->string('registration')->unique();
             $table->integer('capacity');
+            $table->string('color')->nullable();
             $table->tinyInteger('status')->default(1);
             $table->timestamps();
         });

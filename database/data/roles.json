@@ -1,13 +1,16 @@
 [{
         "name": "Root",
+        "slug": "root",
         "description": "Root"
     },
     {
         "name": "Desarrollador",
+        "slug": "desarrollador",
         "description": "Desarrollador"
     },
     {
         "name": "Administrador",
+        "slug": "administrador",
         "description": "Administrador"
     }
 ]

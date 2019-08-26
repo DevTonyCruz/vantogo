@@ -47,7 +47,7 @@
                                     <th scope="col">Titulo</th>
                                     <th scope="col">Preguntas</th>
                                     <th scope="col">Activo</th>
-                                    <th scope="col">Fecha de registro</th>
+                                    <th scope="col">Fecha de creación</th>
                                     <th scope="col">Acciones</th>
                                 </tr>
                             </thead>
@@ -57,7 +57,7 @@
                                 <tr>
                                     <th scope="row">{{ $tema->id }}</th>
                                     <td>{{ $tema->title }}</td>
-                                    <td>{{ '5' }}</td>
+                                    <td>{{ $tema->faq->count() }}</td>
                                     <td>
                                         @php
                                         $checked = ""
@@ -84,12 +84,13 @@
                                     <td>
                                         <a href="{{ url('admin/topics/' . $tema->id) }}" class="action-icon"
                                             title="Ver"> <i class=" mdi mdi-eye-outline"></i></a>
-                                            <a href="{{ url('admin/topics/' . $tema->id . '/edit') }}" class="action-icon"
-                                                title="Editar"> <i class=" mdi mdi-pencil"></i></a>
+                                        <a href="{{ url('admin/topics/' . $tema->id . '/edit') }}" class="action-icon"
+                                            title="Editar"> <i class=" mdi mdi-pencil"></i></a>
                                         <a href="javascript:void(0)"
-                                            onclick="document.getElementById('form_delete_{{ $tema->id }}').submit();"
-                                            class="action-icon" title="Eliminar"> <i
-                                                class=" mdi mdi-trash-can-outline"></i></a>
+                                            onclick="custom.modal_action_delete('{{ url('admin/topics/' . $tema->id) }}')"
+                                            class="action-icon" title="Eliminar">
+                                            <i class=" mdi mdi-trash-can-outline"></i>
+                                        </a>
 
                                         <form method="POST" id="form_delete_{{ $tema->id }}" class="inline"
                                             action="{{ url('admin/topics/' . $tema->id) }}">
@@ -109,15 +110,6 @@
         </div><!-- end col-->
     </div>
 </div>
-@endsection
 
-@section('js')
-<script type="text/javascript" defer>
-    window.onload=function() {
-        $("#datatable").DataTable({
-            language: {
-                "url": "//cdn.datatables.net/plug-ins/1.10.19/i18n/Spanish.json"
-            }});
-	}
-</script>
+@include('admin.elements.delete-modal')
 @endsection

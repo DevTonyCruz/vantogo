@@ -39,6 +39,9 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 //const Swal = window.Swal = require('sweetaler
 require('datatables.net-bs4');
 require('summernote');
+require('daterangepicker');
+require('bootstrap-datepicker');
+require('bootstrap-timepicker');
 
 //const Pruebas = require('./varios/pruebas')
 const metisMenu = require('metismenu');
