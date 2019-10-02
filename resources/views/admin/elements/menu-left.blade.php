@@ -3,13 +3,12 @@
     <div class="slimscroll-menu" id="left-side-menu-container">
 
         <!-- LOGO -->
-        <a href="index.html" class="logo text-center">
+        <a href="{{ route('admin.home') }}" class="logo text-center my-3">
             <span class="logo-lg">
-                <!--<img src="{{ asset('admin/images/logo.png') }}" alt="" height="16">-->
-                <h1 class="text-white"><b>LOGO</b></h1>
+                <img src="{{ asset('admin/images/logo.png') }}" alt="" height="80">
             </span>
             <span class="logo-sm">
-                <!--<img src="{{ asset('admin/images/logo_sm.png') }}" alt="" height="16">-->
+                <img src="{{ asset('admin/images/logo_sm.png') }}" alt="" height="80">
                 <h1 class="text-white"><b>LOGO</b></h1>
             </span>
         </a>

@@ -167,3 +167,16 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'permission']], func
         Route::put('/status/{id}',      'Web\Admin\ProfileController@status')->name('profile.status');*/
     });
 });
+
+
+Route::get('/',                 'Web\Front\HomeController@index')->name('front.home.index');
+Route::get('/result',           'Web\Front\HomeController@result')->name('front.home.result');
+/*Route::get('/create',           'Web\Admin\RolesController@create')->name('roles.create');
+Route::post('/',                'Web\Admin\RolesController@store')->name('roles.store');
+Route::get('/{id}',             'Web\Admin\RolesController@show')->name('roles.show');
+Route::get('/{id}/edit',        'Web\Admin\RolesController@edit')->name('roles.edit');
+Route::put('/{id}',             'Web\Admin\RolesController@update')->name('roles.update');
+Route::delete('/{id}',          'Web\Admin\RolesController@destroy')->name('roles.destroy');
+Route::put('/status/{id}',      'Web\Admin\RolesController@status')->name('roles.status');
+Route::get('/permission/{id}',  'Web\Admin\RolesController@permission')->name('roles.permission');
+Route::put('/permission/{id}',  'Web\Admin\RolesController@save_permission')->name('roles.savePermission');*/

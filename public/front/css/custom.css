@@ -1,0 +1,1035 @@
+@charset "UTF-8";
+
+html {
+  min-height: 100%;
+  position: relative;
+}
+
+body {
+  font-family: "Nunito", sans-serif;
+  margin: 0;
+  min-height: 100%;
+  background-color: #f1f1f1;
+  padding-top: 76px; 
+}
+
+footer {
+  background-color: #ff4439;
+  padding: 30px 0px;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  color: white;
+}
+
+.navbar {
+  background-color: #ff4439eb;
+  z-index: 999;
+}
+
+.navbar-toggler-icon {
+  background-image: url(/images/white-hamburger-icon-8.jpg?5cb32de1a486206995edc8f99be07b2c);
+  width: 40px;
+}
+
+a.nav-link {
+  color: #ffffff !important;
+}
+
+a.navbar-brand.d-flex.w-50.mr-auto {
+  padding: 0 10% 0 20% !important;
+}
+
+a.navbar-brand {
+  position: relative;
+  padding: 0 5% 0 24% !important;
+}
+
+.navbar-expand-lg .navbar-nav .nav-link {
+  padding-right: 1rem;
+  padding-left: 1rem;
+  font-size: 15px;
+}
+
+.col-xl-3.col3_mod2,
+.col-xl-7.col3_mod2 {
+  height: 100%;
+}
+
+.col3_asiento {
+  height: 90%;
+}
+
+.col3_asiento_int {
+  height: 100%;
+}
+
+.img_vantogo_main {
+  width: 80%;
+}
+
+.col2_left_footer {
+  text-align: left;
+}
+
+input.form-control {
+  border-radius: 0 !important;
+  color: gray !important;
+  box-shadow: inset 0 0 5px 0.2px #c4c4c4;
+  background: #fff;
+}
+
+.img_vantogo_main_auto {
+  width: 70px !important;
+}
+
+.icono_centrado_texto {
+  position: relative;
+  margin-bottom: 4px;
+}
+
+.img_logo_header {
+  width: 40px;
+}
+
+.div_ticket_imagen {
+  color: #d11872;
+  text-align: center;
+  font-size: 35px;
+  font-weight: 800;
+  width: 670px;
+  margin: auto;
+  margin-bottom: 20px;
+}
+
+.ticket_name_chofer {
+  font-weight: 100 !important;
+}
+
+span.input-group-text {
+  border-radius: 0 !important;
+  background-color: #fabd19 !important;
+  border: none !important;
+}
+
+.row_index {
+  background-image: url(/images/banner_principal.jpg?2ae4d57a39a99b51ce12656167b93db0);
+  background-position: center;
+  background-size: cover;
+  min-height: 400px;
+  background-repeat: no-repeat;
+}
+
+.title_main_index {
+  position: relative;
+  padding: 134px 0px 60px;
+  line-height: 1.1;
+  font-size: 40px;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.color_van {
+  color: #f2bc15;
+}
+
+.input-group-text img {
+  width: 15px;
+}
+
+.table thead th {
+  vertical-align: bottom;
+  border-bottom: 2px solid #e3eaef;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+.btn_consultar_main {
+  background-color: #ff4439;
+  width: 200px;
+  border: none;
+  color: #ffffff;
+  padding: 5px 20px;
+  font-size: 20px;
+  font-weight: 700;
+  position: relative;
+  cursor: pointer;
+  margin: 40px 0 0px;
+}
+
+.col10_comodidad {
+  display: -webkit-inline-box;
+  display: inline-flex;
+  text-align: center;
+}
+
+.column-comodidad {
+  position: relative;
+  width: 20%;
+}
+
+.title_comodidad_index {
+  position: relative;
+  padding: 50px 0 50px;
+  font-size: 26px;
+  color: #ff4438;
+  font-weight: 700;
+}
+
+.row_comodidad {
+  height: 100%;
+  padding-bottom: 4%;
+}
+
+body {
+  padding-bottom: 0px !important;
+}
+
+.footer_main_int {
+  overflow: auto;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.col-footer_main_int {
+  width: 20%;
+  float: left;
+  text-align: left;
+}
+
+img.icons_redes {
+  width: 10%;
+  float: left;
+  margin: 5px;
+}
+
+.row_cajas_color {
+  position: relative;
+  padding: 60px 0 80px;
+}
+
+.caja_amarilla_main {
+  position: relative;
+  background-color: #fabd1c;
+  width: 90%;
+  height: 150px;
+}
+
+.caja_rosa_main {
+  position: relative;
+  background-color: #d12c71;
+  width: 90%;
+  height: 150px;
+}
+
+.caja_roja_main {
+  position: relative;
+  background-color: #ff4439;
+  width: 90%;
+  height: 150px;
+}
+
+.title_footer_section {
+  position: relative;
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.col3_mod2_ticket {
+  background-image: url(/images/ticket.png?b2ae8a5e965e77d512214e9d0e691fcc);
+  background-size: cover;
+  margin: 20px;
+  background-repeat: no-repeat;
+  background-position: top;
+  height: 90%;
+  padding: 17% 30px 30px;
+}
+
+.navbar_section {
+  position: inherit !important;
+}
+
+.div_btn_contunuar_mod2 {
+  text-align: right;
+  margin-right: 50px;
+}
+
+.table_tr_mod2 {
+  background-color: #d11872;
+  color: #ffffff;
+}
+
+.img_chofer_ticket {
+  position: absolute;
+  bottom: 25px;
+  right: 0px;
+}
+
+span.img_chofer_ticket_b {
+  position: absolute;
+  bottom: 25px;
+  right: 0px;
+}
+
+.col3_mod2 {
+  padding: 0 10px 35px !important;
+  height: 100%;
+}
+
+.div_ticket_main {
+  position: relative;
+  color: #ffffff;
+  height: 300px;
+}
+
+.font12 img {
+  position: relative;
+  margin-bottom: 4px;
+}
+
+.div_ticket_main_mod4 {
+  position: relative;
+  padding: 12% 30px 30px;
+  color: #ff4439;
+}
+
+.div_ticket_row2_mod2 {
+  bottom: 40px;
+  padding: 20px 20px 0;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.div_ticket_row2_mod4 {
+  bottom: 40px;
+  padding: 20px 0px 0;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.img_100 {
+  width: 100%;
+}
+
+.row_main_mod2 {
+  position: relative;
+  padding-top: 80px;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.title_ticket_mod2 {
+  color: #d11872;
+  text-align: center;
+  font-size: 35px;
+  font-weight: 800;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.descripcion_pago_mod4 {
+  position: relative;
+  background-color: #e8e8e8;
+  color: #7b7b7b;
+  padding: 20px;
+}
+
+.fecha_ticket_col3_mod2 {
+  font-size: 26px;
+  letter-spacing: 1px;
+  position: relative;
+  margin-top: 10px;
+  font-weight: 700;
+}
+
+.fecha_ticket_col3_mod4 {
+  font-size: 26px;
+  letter-spacing: 1px;
+  position: relative;
+  margin-top: 10px;
+  font-weight: 700;
+}
+
+.form-group label {
+  color: #5f5f5f;
+}
+
+.hr_mod4_pagar {
+  border-top: 1px solid #d2d2d2;
+}
+
+.a_mod4_pagar {
+  color: #ff4439;
+}
+
+.a_mod4_pagar:hover {
+  color: #ff4439;
+}
+
+.title_leido_mod4 {
+  position: relative;
+  margin-top: 5px;
+}
+
+.total_mod4 {
+  font-size: 22px;
+  margin-bottom: 10px;
+  color: #ff4439;
+  font-weight: 700;
+}
+
+.title_informacion_asiento_mod4 {
+  font-weight: 700;
+  position: relative;
+  font-size: 20px;
+  color: #5f5f5f;
+  margin-bottom: 10px;
+}
+
+.font12_mod4 {
+  font-size: 16px;
+  margin-bottom: 5px;
+  letter-spacing: 1px;
+  font-weight: 800;
+  padding-top: 10px;
+}
+
+.font12 {
+  font-size: 16px;
+  margin-bottom: 5px;
+  letter-spacing: 1px;
+  font-weight: 800;
+}
+
+.font12_nbold {
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.font13 {
+  font-size: 16px;
+}
+
+.hr_mod4 {
+  border: 1px solid red;
+  color: red;
+}
+
+.ticket_pasajero_mod3 {
+  text-align: left;
+  font-size: 14px;
+  height: 40%;
+  overflow: auto;
+}
+
+.title1_pasajero_mod4 {
+  font-weight: 600;
+  margin-bottom: 5px;
+  font-size: 16px;
+  color: #5f5f5f;
+}
+
+.pasajero_txt.font13 {
+  padding-left: 23px;
+}
+
+.title1_pasajero_mod3 {
+  padding-top: 5px;
+}
+
+.color_gray {
+  color: #5f5f5f;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.color_gray_izq {
+  padding-left: 24px;
+}
+
+.title_chofer {
+  color: #ff4439;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.shadow_col8_mod4 {
+  box-shadow: -13px 7px 7px -14px #8f8f8f;
+}
+
+.hr100 {
+  width: 100%;
+}
+
+.costo_ticket_mod3 {
+  font-size: 18px;
+  font-weight: 700;
+  text-align: left;
+  padding-top: 15px;
+}
+
+/* TamaÃ±o del scroll */
+
+.row::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+/* Estilos barra (thumb) de scroll */
+
+.row::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 4px;
+}
+
+.row::-webkit-scrollbar-thumb:active {
+  background-color: #999999;
+}
+
+.row::-webkit-scrollbar-thumb:hover {
+  background: #b3b3b3;
+  box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos track de scroll */
+
+.row::-webkit-scrollbar-track {
+  background: #e1e1e1;
+  border-radius: 4px;
+}
+
+.row::-webkit-scrollbar-track:hover,
+.row::-webkit-scrollbar-track:active {
+  background: #d4d4d4;
+}
+
+.title_informacion_pasajero_mod3 {
+  background-color: #d11872;
+  color: #ffffff;
+  text-align: center;
+  padding: 10px;
+  font-weight: 700;
+}
+
+.col6-informacion_mod3 {
+  height: 60%;
+  margin-bottom: 10px;
+  position: relative;
+  padding: 0;
+  background-color: #ffffff;
+  box-shadow: 0px -1px 22px -2px #8f8f8f;
+}
+
+.div_informacion_pading_mod3 {
+  position: relative;
+  padding: 30px;
+  color: #ff4439;
+}
+
+.title_informacion_asiento_mod3 {
+  font-weight: 700;
+  position: relative;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.title_elige_asiento_mod3 {
+  color: #ff4439;
+  font-size: 20px;
+  font-weight: 800;
+  margin: 10px;
+  text-align: center;
+  display: none;
+}
+
+.opciones_elige_asiento_mod3 {
+  font-size: 18px;
+  position: relative;
+  width: 70%;
+  margin: 0 auto;
+  margin-bottom: 50px;
+}
+
+.cuadrado_span_disponible {
+  background: #9e9e9e;
+  padding: 7px;
+  display: -webkit-inline-box;
+  margin-right: 5px;
+}
+
+.cuadrado_span_ocupado {
+  background: #ff4439;
+  padding: 7px;
+  display: -webkit-inline-box;
+  margin-right: 5px;
+}
+
+.cuadrado_span_elegir {
+  background: #e4bb20;
+  padding: 7px;
+  display: -webkit-inline-box;
+  margin-right: 5px;
+}
+
+.opciones_elegir_span {
+  position: relative;
+  margin: 0 auto;
+}
+
+.div_btn_contunuar_mod3 {
+  text-align: right;
+}
+
+.form-control {
+  border: none;
+}
+
+.table th,
+.table td {
+  font-size: 14px;
+}
+
+.row.no-gutters.row_cajas_color {
+  display: none;
+}
+
+.icon-select{
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+}
+
+.navbar-nav .nav-link{
+  padding-right: 2rem;
+  padding-left: 2rem;
+}
+
+@media (min-width: 576px){
+  .navbar-expand-sm .navbar-nav .nav-link {
+    padding-right: 2rem;
+    padding-left: 2rem;
+  }
+}
+
+[type=radio]:checked,
+[type=radio]:not(:checked) {
+  position: absolute;
+  left: -9999px;
+}
+
+[type=radio]:checked + label,
+[type=radio]:not(:checked) + label {
+  position: relative;
+  padding-left: 28px;
+  cursor: pointer;
+  line-height: 20px;
+  display: inline-block;
+  color: #666;
+}
+
+[type=radio]:checked + label:before,
+[type=radio]:not(:checked) + label:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #ddd;
+  border-radius: 100%;
+  background: #ebbc35;
+}
+
+[type=radio]:checked + label:after,
+[type=radio]:not(:checked) + label:after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  background: white;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  border-radius: 100%;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+[type=radio]:not(:checked) + label:after {
+  opacity: 0;
+  -webkit-transform: scale(0);
+  transform: scale(0);
+}
+
+[type=radio]:checked + label:after {
+  opacity: 1;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+
+@media only screen and (max-width: 1125px) {
+  .table thead th {
+    vertical-align: bottom;
+    border-bottom: 2px solid #e3eaef;
+    font-size: 9px;
+    letter-spacing: 1px;
+  }
+
+  .column-comodidad {
+    width: 100% !important;
+    margin-bottom: 50px;
+  }
+
+  .col10_comodidad {
+    display: inline;
+  }
+
+  .row_cajas_color {
+    position: relative;
+    padding: 20px 0 80px;
+  }
+
+  .input-group {
+    margin-bottom: 10px;
+  }
+
+  hr,
+  .hr100 {
+    width: 80%;
+  }
+
+  .div_ticket_main {
+    padding: 0% 0px 0 !important;
+  }
+
+  .col-xl-3.col3_mod2 {
+    height: 100%;
+    width: 90% !important;
+    margin: 0 auto;
+  }
+
+  .title_elige_asiento_mod3 {
+    display: inherit;
+  }
+
+  .col3_asiento {
+    height: 90%;
+    width: 99%;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: 768x) and (max-width: 1125px) {
+  .caja_rosa_main {
+    width: 90%;
+    margin-bottom: 30px;
+  }
+
+  .caja_roja_main {
+    width: 90%;
+    margin-bottom: 30px;
+  }
+
+  .caja_amarilla_main {
+    width: 90%;
+    margin-bottom: 30px;
+  }
+
+  .div_btn_contunuar_mod2 {
+    text-align: center !important;
+    margin-right: 0 !important;
+  }
+
+  .img_navbar {
+    width: 50px;
+  }
+
+  a.navbar-brand {
+    position: relative;
+    padding: 0 5% 0 10% !important;
+  }
+
+  .img_vantogo_main_auto {
+    width: 45px !important;
+  }
+
+  .column-comodidad {
+    width: 100% !important;
+    margin-bottom: 50px;
+  }
+
+  .col10_comodidad {
+    display: block !important;
+  }
+
+  .input-group {
+    margin-bottom: 10px;
+  }
+
+  .form-control {
+    padding: 1.45rem 0.9rem;
+  }
+
+  .div_ticket_main {
+    padding: 130px 30px 0 !important;
+  }
+}
+
+/*MOBILE */
+
+@media only screen and (max-width: 768px) {
+  a.navbar-brand {
+    padding-left: 60px !important;
+  }
+
+  a.nav-link {
+    font-size: 15px !important;
+    text-align: center;
+  }
+
+  .div_btn_contunuar_mod2 {
+    text-align: center !important;
+    margin-right: 0 !important;
+  }
+
+  .ticket_pasajero_mod3 .col-md-12 {
+    text-align: center;
+  }
+
+  .div_btn_contunuar_mod3 {
+    text-align: center;
+  }
+
+  .img_navbar {
+    width: 50px;
+  }
+
+  .form-control {
+    padding: 0.45rem 0.9rem;
+  }
+
+  .row_cajas_color {
+    padding: 0px 30px 40px;
+  }
+
+  .caja_amarilla_main {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+  .caja_rosa_main {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+  .caja_roja_main {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+  .title_comodidad_index {
+    padding: 50px 0 30px !important;
+    font-size: 20px;
+  }
+
+  .column-comodidad {
+    width: 100% !important;
+    margin-bottom: 50px;
+  }
+
+  .col10_comodidad {
+    display: block !important;
+  }
+
+  .img_vantogo_main_auto {
+    width: auto !important;
+    margin-bottom: 30px;
+  }
+
+  .input-group {
+    margin-bottom: 10px;
+  }
+
+  .footer_main .no-gutters .col-md-3 {
+    position: relative;
+    margin-bottom: 20px !important;
+  }
+
+  .col-footer_main_int {
+    width: 100%;
+    float: left;
+    text-align: center;
+    padding-bottom: 20px;
+  }
+
+  .display_none_mobile {
+    display: none;
+  }
+
+  .txt_footer_section {
+    font-size: 15px;
+    padding-bottom: 5px;
+  }
+
+  .title_footer_section {
+    font-size: 18px;
+  }
+
+  .fecha_ticket_col3_mod2 {
+    font-size: 20px;
+  }
+
+  .icon_footer_section {
+    overflow: auto;
+    width: 25%;
+    float: left;
+    padding-top: 10px;
+  }
+
+  img.icons_redes {
+    width: 50%;
+    float: initial;
+    margin: 5px;
+  }
+
+  .div_ticket_imagen {
+    display: none;
+  }
+
+  .font12 {
+    font-size: 13px;
+  }
+
+  .font12_nbold {
+    font-weight: 400;
+    padding-bottom: 10px;
+  }
+
+  .font13 {
+    font-size: 20px;
+    padding-bottom: 10px;
+  }
+
+  .row_main_mod2 {
+    height: initial;
+  }
+
+  .div_ticket_row2_mod2 {
+    padding: 20px 30px 0px;
+    height: 100%;
+  }
+
+  .font_chofer {
+    font-size: 14px;
+    padding-top: 20px;
+    text-align: center;
+  }
+
+  .table thead th {
+    font-size: 13px;
+  }
+
+  td.col_mobile,
+  th.col_mobile {
+    display: none;
+  }
+
+  .btn_consultar_main {
+    margin: 25px 0 25px;
+    width: 170px;
+    font-size: 18px;
+  }
+
+  .row_main_mod2 {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .img_chofer_ticket {
+    position: absolute;
+    bottom: 0px;
+    top: 0%;
+    right: 20%;
+  }
+
+  .img_chofer_ticket_b {
+    position: absolute !important;
+    bottom: 0px !important;
+    top: 0% !important;
+    right: 20% !important;
+  }
+
+  .img_100 {
+    width: 60% !important;
+    margin-top: 5% !important;
+    margin-left: 5% !important;
+    margin-bottom: 5% !important;
+  }
+
+  .col3_mod2_ticket {
+    width: 100% !important;
+    margin: 0 auto;
+  }
+
+  .costo_ticket_mod3 {
+    text-align: center;
+  }
+
+  .opciones_elige_asiento_mod3 {
+    margin-bottom: 20px;
+  }
+
+  .div_ticket_main {
+    height: 80%;
+  }
+
+  .ticket_pasajero_mod3 {
+    text-align: left;
+    font-size: 14px;
+    height: 100%;
+    overflow: auto;
+  }
+
+  .col6-informacion_mod3 {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .div_ticket_main_mod4 {
+    padding: 5% 30px 30px;
+  }
+}
+
+/* page */
+
+.bg-ticket{
+  background-image: url('/images/ticket.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+}
+
+.step-shopping{
+  border-bottom: 5px solid #ffbc00;
+  font-size: 12px;
+}
+
+.step-shopping.active{
+  border-bottom: 5px solid #ff4439;
+}
+
+.step-shopping.active .step-status{
+  background-color:#ff4439 !important;
+}
+
+.step-shopping .step-status {
+  padding-top: 5px;
+  width: 45px;
+  height: 45px;
+  font-size: 25px;
+}
+
+.ajuste-padding-1{
+  padding-top: 13px !important;
+}

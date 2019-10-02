@@ -10,8 +10,7 @@
             <div class="auth-brand text-center text-lg-left">
                 <a href="{{ route('admin.login') }}">
                     <span>
-                        <!-- <img src="{{ asset('admin/images/logo-light.png') }}" alt="" height="18"> -->
-                        <h1><b>LOGO</b></h1>
+                        <img src="{{ asset('admin/images/logo-light.png') }}" alt="" height="80">
                     </span>
                 </a>
             </div>
@@ -60,15 +59,8 @@
                         @enderror
                     </div>
                 </div>
-                <div class="form-group mb-3">
-                    <div class="custom-control custom-checkbox">
-                        <input name="remember" id="remember" type="checkbox" class="custom-control-input"
-                            {{ old('remember') ? 'checked' : '' }}>
-                        <label class="custom-control-label" for="remember">Recuerdame</label>
-                    </div>
-                </div>
                 <div class="form-group mb-0 text-center">
-                    <button class="btn btn-primary btn-block" type="submit"><i class="mdi mdi-login"></i> Entrar
+                    <button class="btn btn-danger btn-block" type="submit"><i class="mdi mdi-login"></i> Entrar
                     </button>
                 </div>
             </form>

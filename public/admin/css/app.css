@@ -14069,7 +14069,7 @@ body.authentication-bg {
           flex-direction: row;
   -webkit-box-align: stretch;
           align-items: stretch;
-  background: url("/admin/images/bg-auth.jpg") center;
+  background-color: rgba(0, 0, 0, 0.3);
   background-size: cover;
 }
 
@@ -14089,7 +14089,7 @@ body.authentication-bg {
           flex: 1;
   position: relative;
   color: #fff;
-  background-color: rgba(0, 0, 0, 0.3);
+  background: url("/admin/images/bg-auth.jpg") center;
 }
 
 .auth-brand {

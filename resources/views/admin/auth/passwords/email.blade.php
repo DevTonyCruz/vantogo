@@ -13,8 +13,7 @@
             <!-- Logo -->
             <div class="auth-brand text-center text-lg-left">
                 <a href="{{ route('admin.login') }}">
-                    <!-- <img src="{{ asset('admin/images/logo-light.png') }}" alt="" height="18"> -->
-                    <h1><b>LOGO</b></h1>
+                    <img src="{{ asset('admin/images/logo-light.png') }}" alt="" height="80">
                 </a>
             </div>
 
@@ -39,7 +38,7 @@
                     @enderror
                 </div>
                 <div class="form-group mb-0 text-center">
-                    <button class="btn btn-primary btn-block" type="submit"><i class="mdi mdi-lock-reset"></i>
+                    <button class="btn btn-danger btn-block" type="submit"><i class="mdi mdi-lock-reset"></i>
                         Restablecer la contraseña </button>
                 </div>
 

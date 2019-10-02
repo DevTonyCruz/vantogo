@@ -8,7 +8,7 @@
             <!-- Logo -->
             <div class="auth-brand text-center text-lg-left">
                 <a href="{{ route('admin.login') }}">
-                    <span><img src="{{ asset('admin/images/logo-light.png') }}" alt="" height="18"></span>
+                    <img src="{{ asset('admin/images/logo-light.png') }}" alt="" height="80">
                 </a>
             </div>
 
@@ -75,7 +75,7 @@
                     </div>
                 </div>
                 <div class="form-group mb-0 text-center">
-                    <button class="btn btn-primary btn-block" type="submit"><i class="mdi mdi-account-circle"></i> Regístrese </button>
+                    <button class="btn btn-danger btn-block" type="submit"><i class="mdi mdi-account-circle"></i> Regístrese </button>
                 </div>
             </form>
             <!-- end form-->

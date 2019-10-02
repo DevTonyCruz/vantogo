@@ -48,5 +48,6 @@ const metisMenu = require('metismenu');
 const slimscroll = require('jquery-slimscroll');
 const select2 = require('select2');
 const moment = window.moment = require('moment');
+const typeahead = require('typeahead.js');
 
 const custom = window.custom = require('./varios/custom');

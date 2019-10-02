@@ -31,6 +31,7 @@
         "bootstrap": "^4.3.1",
         "bootstrap-datepicker": "^1.8.0",
         "bootstrap-maxlength": "^1.6.0",
+        "bootstrap-sass-datepicker": "^1.0.0",
         "bootstrap-timepicker": "^0.5.2",
         "bootstrap-touchspin": "^4.2.5",
         "britecharts": "^2.9.8",
@@ -45,6 +46,7 @@
         "datatables.net-responsive-bs4": "^2.2.3",
         "datatables.net-select": "^1.2.7",
         "datatables.net-select-bs4": "^1.2.7",
+        "datepicker-bootstrap": "^1.9.13",
         "daterangepicker": "^3.0.2",
         "dragula": "^3.7.2",
         "dropzone": "^5.5.1",
@@ -64,6 +66,7 @@
         "popper.js": "^1.14.7",
         "select2": "^4.0.6-rc.1",
         "summernote": "^0.8.12",
+        "sweetalert2": "^8.18.0",
         "twitter-bootstrap-wizard": "^1.2.0",
         "typeahead.js": "^0.11.1"
     }
