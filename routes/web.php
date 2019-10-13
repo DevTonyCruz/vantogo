@@ -170,7 +170,10 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'permission']], func
 
 
 Route::get('/',                 'Web\Front\HomeController@index')->name('front.home.index');
-Route::get('/result',           'Web\Front\HomeController@result')->name('front.home.result');
+Route::post('/viaje',           'Web\Front\HomeController@viaje')->name('front.home.viaje');
+Route::get('/asientos',         'Web\Front\HomeController@asientos')->name('front.home.asientos');
+Route::post('/pasajeros',       'Web\Front\HomeController@pasajeros')->name('front.home.pasajeros');
+Route::get('/pago',             'Web\Front\HomeController@pago')->name('front.home.pago');
 /*Route::get('/create',           'Web\Admin\RolesController@create')->name('roles.create');
 Route::post('/',                'Web\Admin\RolesController@store')->name('roles.store');
 Route::get('/{id}',             'Web\Admin\RolesController@show')->name('roles.show');

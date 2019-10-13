@@ -104253,40 +104253,16 @@ $('#select-all').click(function (event) {
 
 /***/ }),
 
-/***/ "./resources/front/sass/app.scss":
-/*!***************************************!*\
-  !*** ./resources/front/sass/app.scss ***!
-  \***************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-throw new Error("Module build failed (from ./node_modules/css-loader/index.js):\nModuleBuildError: Module build failed (from ./node_modules/sass-loader/lib/loader.js):\n\r\nundefined\r\n                                   ^\r\n      Incompatible units rem and px.\n    ╷\n718 │ $nav-link-height:                   $font-size-base * $line-height-base + $nav-link-padding-y * 2 !default;\n    │                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    ╵\n  node_modules\\bootstrap\\scss\\_variables.scss 718:37  @import\n  node_modules\\bootstrap\\scss\\bootstrap.scss 9:9      @import\n  stdin 4:9                                           root stylesheet\r\n      in C:\\xampp\\htdocs\\repositorios\\vantogo\\node_modules\\bootstrap\\scss\\_variables.scss (line 718, column 37)\n    at runLoaders (C:\\xampp\\htdocs\\repositorios\\vantogo\\node_modules\\webpack\\lib\\NormalModule.js:302:20)\n    at C:\\xampp\\htdocs\\repositorios\\vantogo\\node_modules\\loader-runner\\lib\\LoaderRunner.js:367:11\n    at C:\\xampp\\htdocs\\repositorios\\vantogo\\node_modules\\loader-runner\\lib\\LoaderRunner.js:233:18\n    at context.callback (C:\\xampp\\htdocs\\repositorios\\vantogo\\node_modules\\loader-runner\\lib\\LoaderRunner.js:111:13)\n    at render (C:\\xampp\\htdocs\\repositorios\\vantogo\\node_modules\\sass-loader\\lib\\loader.js:52:13)\n    at Function.$2 (C:\\xampp\\htdocs\\repositorios\\vantogo\\node_modules\\sass\\sass.dart.js:24920:48)\n    at yL.$2 (C:\\xampp\\htdocs\\repositorios\\vantogo\\node_modules\\sass\\sass.dart.js:15546:15)\n    at wO.lT (C:\\xampp\\htdocs\\repositorios\\vantogo\\node_modules\\sass\\sass.dart.js:9342:42)\n    at wO.lS (C:\\xampp\\htdocs\\repositorios\\vantogo\\node_modules\\sass\\sass.dart.js:9344:32)\n    at j2.wk (C:\\xampp\\htdocs\\repositorios\\vantogo\\node_modules\\sass\\sass.dart.js:8651:46)\n    at w9.$0 (C:\\xampp\\htdocs\\repositorios\\vantogo\\node_modules\\sass\\sass.dart.js:8787:7)\n    at Object.eZ (C:\\xampp\\htdocs\\repositorios\\vantogo\\node_modules\\sass\\sass.dart.js:1471:80)\n    at ar.bs (C:\\xampp\\htdocs\\repositorios\\vantogo\\node_modules\\sass\\sass.dart.js:8704:3)\n    at jh.bs (C:\\xampp\\htdocs\\repositorios\\vantogo\\node_modules\\sass\\sass.dart.js:8646:25)\n    at jh.cK (C:\\xampp\\htdocs\\repositorios\\vantogo\\node_modules\\sass\\sass.dart.js:8633:12)\n    at qb.cK (C:\\xampp\\htdocs\\repositorios\\vantogo\\node_modules\\sass\\sass.dart.js:8416:35)\n    at Object.m (C:\\xampp\\htdocs\\repositorios\\vantogo\\node_modules\\sass\\sass.dart.js:1361:19)\n    at C:\\xampp\\htdocs\\repositorios\\vantogo\\node_modules\\sass\\sass.dart.js:4975:51\n    at zf.a (C:\\xampp\\htdocs\\repositorios\\vantogo\\node_modules\\sass\\sass.dart.js:1369:71)\n    at zf.$2 (C:\\xampp\\htdocs\\repositorios\\vantogo\\node_modules\\sass\\sass.dart.js:8435:23)\n    at xM.$2 (C:\\xampp\\htdocs\\repositorios\\vantogo\\node_modules\\sass\\sass.dart.js:8430:25)\n    at wO.lT (C:\\xampp\\htdocs\\repositorios\\vantogo\\node_modules\\sass\\sass.dart.js:9342:42)\n    at wO.lS (C:\\xampp\\htdocs\\repositorios\\vantogo\\node_modules\\sass\\sass.dart.js:9344:32)\n    at j2.wk (C:\\xampp\\htdocs\\repositorios\\vantogo\\node_modules\\sass\\sass.dart.js:8651:46)\n    at w9.$0 (C:\\xampp\\htdocs\\repositorios\\vantogo\\node_modules\\sass\\sass.dart.js:8787:7)\n    at Object.eZ (C:\\xampp\\htdocs\\repositorios\\vantogo\\node_modules\\sass\\sass.dart.js:1471:80)\n    at ar.bs (C:\\xampp\\htdocs\\repositorios\\vantogo\\node_modules\\sass\\sass.dart.js:8704:3)\n    at jh.bs (C:\\xampp\\htdocs\\repositorios\\vantogo\\node_modules\\sass\\sass.dart.js:8646:25)\n    at jh.cK (C:\\xampp\\htdocs\\repositorios\\vantogo\\node_modules\\sass\\sass.dart.js:8633:12)\n    at Object.eval (eval at FR (C:\\xampp\\htdocs\\repositorios\\vantogo\\node_modules\\sass\\sass.dart.js:641:8), <anonymous>:3:37)\n    at wO.lT (C:\\xampp\\htdocs\\repositorios\\vantogo\\node_modules\\sass\\sass.dart.js:9342:42)\n    at wO.lS (C:\\xampp\\htdocs\\repositorios\\vantogo\\node_modules\\sass\\sass.dart.js:9344:32)\n    at j2.wk (C:\\xampp\\htdocs\\repositorios\\vantogo\\node_modules\\sass\\sass.dart.js:8651:46)\n    at w9.$0 (C:\\xampp\\htdocs\\repositorios\\vantogo\\node_modules\\sass\\sass.dart.js:8787:7)\n    at Object.eZ (C:\\xampp\\htdocs\\repositorios\\vantogo\\node_modules\\sass\\sass.dart.js:1471:80)\n    at ar.bs (C:\\xampp\\htdocs\\repositorios\\vantogo\\node_modules\\sass\\sass.dart.js:8704:3)");
-
-/***/ }),
-
-/***/ "./resources/front/sass/custom.scss":
-/*!******************************************!*\
-  !*** ./resources/front/sass/custom.scss ***!
-  \******************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
 /***/ 0:
-/*!******************************************************************************************************************************************************************************!*\
-  !*** multi ./resources/admin/js/app.js ./resources/admin/sass/app.scss ./resources/admin/sass/icons.scss ./resources/front/sass/app.scss ./resources/front/sass/custom.scss ***!
-  \******************************************************************************************************************************************************************************/
+/*!***********************************************************************************************************!*\
+  !*** multi ./resources/admin/js/app.js ./resources/admin/sass/app.scss ./resources/admin/sass/icons.scss ***!
+  \***********************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! C:\xampp\htdocs\repositorios\vantogo\resources\admin\js\app.js */"./resources/admin/js/app.js");
 __webpack_require__(/*! C:\xampp\htdocs\repositorios\vantogo\resources\admin\sass\app.scss */"./resources/admin/sass/app.scss");
-__webpack_require__(/*! C:\xampp\htdocs\repositorios\vantogo\resources\admin\sass\icons.scss */"./resources/admin/sass/icons.scss");
-__webpack_require__(/*! C:\xampp\htdocs\repositorios\vantogo\resources\front\sass\app.scss */"./resources/front/sass/app.scss");
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\repositorios\vantogo\resources\front\sass\custom.scss */"./resources/front/sass/custom.scss");
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\repositorios\vantogo\resources\admin\sass\icons.scss */"./resources/admin/sass/icons.scss");
 
 
 /***/ })

@@ -57,7 +57,8 @@ class TravelsController extends Controller
             'route_id' => 'required|numeric',
             'car_id' => 'required|numeric',
             'driver_id' => 'required|numeric',
-            'hour' => 'required|date_format:G:i:s',
+            'hour_ini' => 'required|date_format:G:i:s',
+            'hour_fin' => 'required|date_format:G:i:s',
             'date' => 'required|date_format:m/d/Y',
             'place' => 'required',
         ];
@@ -70,8 +71,10 @@ class TravelsController extends Controller
             'car_id.numeric' => 'Debe seleccionar un vehículo válido',
             'driver_id.required' => 'El campo chofer es requerido',
             'driver_id.numeric' => 'Debe seleccionar un chofer válida',
-            'hour.required' => 'El campo hora de salida es requerido',
-            'hour.date_format' => 'El campo hora de salida no es válido',
+            'hour_ini.required' => 'El campo hora de salida es requerido',
+            'hour_ini.date_format' => 'El campo hora de salida no es válido',
+            'hour_fin.required' => 'El campo hora de llegada es requerido',
+            'hour_fin.date_format' => 'El campo hora de llegada no es válido',
             'date.required' => 'El campo fecha de salida no es válido',
             'date.date_format' => 'El campo fecha de salida es requerido',
             'place.required' => 'El campo lugar de salida es requerido',
@@ -90,7 +93,8 @@ class TravelsController extends Controller
                 $travels->route_id = $request->route_id;
                 $travels->car_id = $request->car_id;
                 $travels->driver_id = $request->driver_id;
-                $travels->hour = Carbon::parse($request->hour)->format('H:i');
+                $travels->hour_ini = Carbon::parse($request->hour_ini)->format('H:i');
+                $travels->hour_fin = Carbon::parse($request->hour_fin)->format('H:i');
                 $travels->date = Carbon::parse($request->date)->format('Y-m-d');
                 $travels->place = $request->place;
 
@@ -155,7 +159,8 @@ class TravelsController extends Controller
             'route_id' => 'required|numeric',
             'car_id' => 'required|numeric',
             'driver_id' => 'required|numeric',
-            'hour' => 'required|date_format:H:i:s',
+            'hour_ini' => 'required|date_format:G:i:s',
+            'hour_fin' => 'required|date_format:G:i:s',
             'date' => 'required|date_format:m/d/Y',
             'place' => 'required',
         ];
@@ -168,8 +173,10 @@ class TravelsController extends Controller
             'car_id.numeric' => 'Debe seleccionar un vehículo válido',
             'driver_id.required' => 'El campo chofer es requerido',
             'driver_id.numeric' => 'Debe seleccionar un chofer válida',
-            'hour.required' => 'El campo hora de salida es requerido',
-            'hour.date_format' => 'El campo hora de salida no es válido',
+            'hour_ini.required' => 'El campo hora de salida es requerido',
+            'hour_ini.date_format' => 'El campo hora de salida no es válido',
+            'hour_fin.required' => 'El campo hora de llegada es requerido',
+            'hour_fin.date_format' => 'El campo hora de llegada no es válido',
             'date.required' => 'El campo fecha de salida no es válido',
             'date.date_format' => 'El campo fecha de salida es requerido',
             'place.required' => 'El campo lugar de salida es requerido',
@@ -188,7 +195,8 @@ class TravelsController extends Controller
                 $travels->route_id = $request->route_id;
                 $travels->car_id = $request->car_id;
                 $travels->driver_id = $request->driver_id;
-                $travels->hour = Carbon::parse($request->hour)->format('H:i');
+                $travels->hour_ini = Carbon::parse($request->hour_ini)->format('H:i');
+                $travels->hour_fin = Carbon::parse($request->hour_fin)->format('H:i');
                 $travels->date = Carbon::parse($request->date)->format('Y-m-d');
                 $travels->place = $request->place;
 

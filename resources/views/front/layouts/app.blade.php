@@ -13,8 +13,8 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Styles -->
-    <link href="{{ asset('front/css/app.css') }}" rel="stylesheet">
-    <link href="{{ asset('front/css/icons.css') }}" rel="stylesheet">
+    <link href="{{ asset('admin/css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('admin/css/icons.css') }}" rel="stylesheet">
     <link href="{{ asset('front/css/custom.css') }}" rel="stylesheet">
 
     @yield('css')
@@ -23,6 +23,14 @@
 <body>
     @include('front.layouts.menu')
 
+    @if (session('warning'))
+        @include('front.elements.modal-warning')
+    @endif
+
+    @if (count($errors) > 0)
+        @include('front.elements.modal-danger')
+    @endif
+    
     <!-- Start Content-->
     @yield('content')
     <!-- container -->

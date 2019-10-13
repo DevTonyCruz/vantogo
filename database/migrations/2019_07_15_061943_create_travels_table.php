@@ -19,7 +19,8 @@ class CreateTravelsTable extends Migration
             $table->integer('route_id');
             $table->integer('car_id');
             $table->integer('driver_id');
-            $table->time('hour');
+            $table->time('hour_ini');
+            $table->time('hour_fin');
             $table->date('date');
             $table->string('place');
             $table->tinyInteger('status')->default(1);

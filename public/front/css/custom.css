@@ -548,7 +548,6 @@ span.img_chofer_ticket_b {
   position: relative;
   width: 70%;
   margin: 0 auto;
-  margin-bottom: 50px;
 }
 
 .cuadrado_span_disponible {
@@ -605,6 +604,46 @@ span.img_chofer_ticket_b {
   padding-right: 2rem;
   padding-left: 2rem;
 }
+
+.svg-van{
+  width: 100%;
+}
+
+.asientos{
+  cursor: pointer;
+  fill: #9e9e9e;
+}
+
+.asientos.seleccionado{
+  fill: #fbbd1b;
+}
+
+.asientos.ocupado{
+  fill: #ff4439;
+  cursor: no-drop;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 @media (min-width: 576px){
   .navbar-expand-sm .navbar-nav .nav-link {

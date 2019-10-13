@@ -21,4 +21,10 @@ class Travels extends Model
     {
         return $this->hasOne('App\Models\Drivers', 'id', 'driver_id');
     }
+
+    public function disponibilidad(){
+        
+        $capacity = $this->car->capacity;
+        return $capacity;
+    }
 }

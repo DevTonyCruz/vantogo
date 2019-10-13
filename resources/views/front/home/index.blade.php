@@ -6,59 +6,65 @@
     <div class="col-2"></div>
     <div class="col-8">
         <div class="text-center title_main_index">Trayectos que te <span class="color_van">van</span> a encantar</div>
-        <div class="row">
-            <div class="col-xl-3">
-                <div class="input-group">
-                    <select class="form-control select2" data-toggle="select2" id="origen" name="origen">
-                        <option></option>
-                        @foreach ($origin as $route)
-                        <option value="{{ $route->origin }}">{{ $route->origin }}</option>
-                        @endforeach
-                    </select>
-                    <div class="input-group-append icon-select">
-                        <span class="input-group-text"><img src="{{ asset('front/img/icon_pin.png') }}"
-                                alt="icon_pin"></span>
+        <form method="POST" action="{{ url('/viaje') }}">
+            <div class="row">
+                @csrf
+                <div class="col-xl-3">
+                    <div class="input-group{{ $errors->has('origen') ? ' is-invalid' : '' }}">
+                        <select class="form-control select2" data-toggle="select2" id="origen" name="origen">
+                            <option></option>
+                            @foreach ($origin as $route)
+                            <option value="{{ $route->origin }}"
+                                {{ (old('origen') == $route->origin) ? 'selected' : '' }}>{{ $route->origin }}</option>
+                            @endforeach
+                        </select>
+                        <div class="input-group-append icon-select">
+                            <span class="input-group-text">
+                                <img src="{{ asset('front/img/icon_pin.png') }}"
+                                    alt="icon_pin"></span>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-xl-3">
-                <div class="input-group">
-                    <select class="custom-select select2" data-toggle="select2" id="destino" name="destino">
-                        <option></option>
-                        @foreach ($destination as $route)
-                        <option value="{{ $route->destination }}">{{ $route->destination }}</option>
-                        @endforeach
-                    </select>
-                    <div class="input-group-append icon-select">
-                        <span class="input-group-text"><img src="{{ asset('front/img/icon_pin.png') }}"
-                                alt="icon_pin"></span>
+                <div class="col-xl-3">
+                    <div class="input-group">
+                        <select class="custom-select select2" data-toggle="select2" id="destino" name="destino">
+                            <option></option>
+                            @foreach ($destination as $route)
+                            <option value="{{ $route->destination }}"
+                                    {{ (old('destino') == $route->destination) ? 'selected' : '' }}>{{ $route->destination }}</option>
+                            @endforeach
+                        </select>
+                        <div class="input-group-append icon-select">
+                            <span class="input-group-text"><img src="{{ asset('front/img/icon_pin.png') }}"
+                                    alt="icon_pin"></span>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-xl-3">
-                <div class="input-group">
-                    <input type="text" id="date" name="date" class="form-control date" data-toggle="date-picker"
-                        data-single-date-picker="true" value="" required="">
-                    <div class="input-group-append">
-                        <span class="input-group-text"><img src="{{ asset('front/img/icon_calendario.png') }}"
-                                alt="icon_calendario"></span>
+                <div class="col-xl-3">
+                    <div class="input-group">
+                        <input type="text" id="date" name="date" class="form-control date" data-toggle="date-picker"
+                            data-single-date-picker="true" value="{{ old('date') }}" required="">
+                        <div class="input-group-append">
+                            <span class="input-group-text"><img src="{{ asset('front/img/icon_calendario.png') }}"
+                                    alt="icon_calendario"></span>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-xl-3">
-                <div class="input-group">
-                    <input type="number" class="form-control" placeholder="Pasajeros"
-                        aria-label="Dollar amount (with dot and two decimal places)">
-                    <div class="input-group-append">
-                        <span class="input-group-text"><img src="{{ asset('front/img/icon_pasajeros.png') }}"
-                                alt="icon_pasajeros"></span>
+                <div class="col-xl-3">
+                    <div class="input-group">
+                        <input type="number" id="pasajeros" name="pasajeros" class="form-control"
+                            placeholder="Pasajeros" aria-label="Pasajeros" value="{{ old('pasajeros') }}">
+                        <div class="input-group-append">
+                            <span class="input-group-text"><img src="{{ asset('front/img/icon_pasajeros.png') }}"
+                                    alt="icon_pasajeros"></span>
+                        </div>
                     </div>
                 </div>
+                <div class="col-md-12 text-center">
+                    <button type="submit" class="btn btn-danger btn_consultar_main">Consultar</button>
+                </div>
             </div>
-            <div class="col-md-12 text-center">
-                <button type="button" class="btn_consultar_main" onclick="Swal.fire('Hello world!')">Consultar</button>
-            </div>
-        </div>
+        </form>
     </div>
     <div class="col-2"></div>
 </div>

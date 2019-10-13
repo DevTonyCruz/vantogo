@@ -121,15 +121,30 @@
                     </div>
 
                     <div class="form-group row mb-3">
-                        <label for="hour" class="col-3 col-form-label">Hora de salida</label>
+                        <label for="hour_ini" class="col-3 col-form-label">Hora de salida</label>
                         <div class="col-9">
-                            <input type="text" id="hour" name="hour"
-                                class="form-control{{ $errors->has('hour') ? ' is-invalid' : '' }}"
-                                placeholder="Ingrese la hora de salida" value="{{ old('hour') }}"
+                            <input type="text" id="hour_ini" name="hour_ini"
+                                class="form-control{{ $errors->has('hour_ini') ? ' is-invalid' : '' }}"
+                                placeholder="Ingrese la hora de salida" value="{{ old('hour_ini') }}"
                                 data-toggle="timepicker" data-show-meridian="false" required>
-                            @if ($errors->has('hour'))
+                            @if ($errors->has('hour_ini'))
                             <span class="invalid-feedback" role="alert">
-                                <strong>{{ $errors->first('hour') }}</strong>
+                                <strong>{{ $errors->first('hour_ini') }}</strong>
+                            </span>
+                            @endif
+                        </div>
+                    </div>
+
+                    <div class="form-group row mb-3">
+                        <label for="hour_fin" class="col-3 col-form-label">Hora de llegada</label>
+                        <div class="col-9">
+                            <input type="text" id="hour_fin" name="hour_fin"
+                                class="form-control{{ $errors->has('hour_fin') ? ' is-invalid' : '' }}"
+                                placeholder="Ingrese la hora de salida" value="{{ old('hour_fin') }}"
+                                data-toggle="timepicker" data-show-meridian="false" required>
+                            @if ($errors->has('hour_fin'))
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $errors->first('hour_fin') }}</strong>
                             </span>
                             @endif
                         </div>
