@@ -61,9 +61,6 @@ a.navbar-brand {
     height: 100%;
 }
 
-.col3_asiento_int_img{
-}
-
 .img_vantogo_main {
     width: 80%;
 }
@@ -801,6 +798,9 @@ span.img_chofer_ticket_b {
 
 }
 
+.payment-container{
+    display: none;
+}
 
 
 

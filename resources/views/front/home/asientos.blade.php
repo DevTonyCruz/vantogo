@@ -39,7 +39,7 @@
                             <div class="title1_pasajero_mod3 font12"><span><img src="img/icon_pasajero.png" alt=""></span>
                                 PASAJERO</div>
                             <div class="color_gray_izq">
-                                <div class="pasajero_txt font12_nbold">{{ $pasajeros["name"] }}</div>
+                                <div class="pasajero_txt font12_nbold">{{ $pasajeros["name"] . ' ' . $pasajeros["last_name"] }}</div>
                                 <div class="pasajero_txt font12_nbold">{{ $pasajeros["email"] }}</div>
                                 <div class="title1_pasajero_mod3 font12">{{ $pasajeros["phone"] }}</div>
                                 <div class="pasajero_txt font12_nbold">Asiento {{ $pasajeros["asiento"] }}</div>
@@ -58,7 +58,7 @@
 
                     <div class="col-md-5 font_chofer">
                         <div>Tu chofer:</div>
-                        <div class="ticket_name_chofer driver-name-ticket-view">{{ $travel->driver->name}}</div>
+                        <div class="ticket_name_chofer driver-name-ticket-view">{{ $travel->driver->fullname()}}</div>
                         <div class="car-registration-ticket-view">{{ $travel->car->registration}}</div>
                     </div>
                 </div>
@@ -141,15 +141,17 @@
 
                         <div class="div_informacion">
                             <div class="div_informacion_pading_mod3">
-                                <div class="title_informacion_asiento_mod3">ASIENTO 9</div>
-                                <div class="form-group">
-                                    <b><span class="text-dark">Asiento seleccionado: <span
-                                                class="asiento-seleccionado text-dark">{{ old('asiento') }}</span></span></b>
+                                <div class="title_informacion_asiento_mod3 ">
+                                    ASIENTO <span class="asiento-seleccionado">{{ old('asiento') }}</span>                                
                                     <input type="hidden" id="asiento" name="asiento" placeholder="ASIENTO" value="{{ old('asiento') }}" readonly>
                                 </div>
                                 <div class="form-group">
                                     <input type="text" class="form-control" id="name" name="name"
-                                        value="{{ old('name') }}" placeholder="PASAJERO">
+                                        value="{{ old('name') }}" placeholder="NOMBRE(S)">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="last_name" name="last_name"
+                                        value="{{ old('last_name') }}" placeholder="APELLIDOS">
                                 </div>
                                 <div class="form-group">
                                     <input type="text" class="form-control" id="email" name="email" value="{{ old('email') }}" placeholder="EMAIL">

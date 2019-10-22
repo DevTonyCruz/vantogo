@@ -174,8 +174,11 @@ Route::post('/viaje',           'Web\Front\HomeController@viaje')->name('front.h
 Route::get('/asientos',         'Web\Front\HomeController@asientos')->name('front.home.asientos');
 Route::post('/pasajeros',       'Web\Front\HomeController@pasajeros')->name('front.home.pasajeros');
 Route::get('/pago',             'Web\Front\HomeController@pago')->name('front.home.pago');
-/*Route::get('/create',           'Web\Admin\RolesController@create')->name('roles.create');
-Route::post('/',                'Web\Admin\RolesController@store')->name('roles.store');
+
+Route::group(['prefix' => 'payment'], function () {
+    Route::post('/cart', 'Web\Front\PaymentController@cartPayment')->name('payment.cart');
+});
+/*Route::post('/',                'Web\Admin\RolesController@store')->name('roles.store');
 Route::get('/{id}',             'Web\Admin\RolesController@show')->name('roles.show');
 Route::get('/{id}/edit',        'Web\Admin\RolesController@edit')->name('roles.edit');
 Route::put('/{id}',             'Web\Admin\RolesController@update')->name('roles.update');

@@ -101,20 +101,21 @@
 
                                     <div class="row ticket_pasajero_mod3">
                                         @if (isset($session['pasajeros']))
-                                            @foreach ($session['pasajeros'] as $pasajeros)
-                                            <div class="col-md-12">
-                                                <div class="font12_mod4"><span><img
-                                                            src="{{asset('front/img/icon_pasajero_na.png')}}" alt=""></span>
-                                                    PASAJERO</div>
-                                                <div class="color_gray_izq">
-                                                    <div class="color_gray">{{ $pasajeros["name"] }}</div>
-                                                    <div class="color_gray">{{ $pasajeros["email"] }}</div>
-                                                    <div class="color_gray">{{ $pasajeros["phone"] }}</div>
-                                                    <div class="font12_mod4">ASIENTO {{ $pasajeros["asiento"] }}</div>
-                                                </div>
-                                                <hr class="hr_mod4">
+                                        @foreach ($session['pasajeros'] as $pasajeros)
+                                        <div class="col-md-12">
+                                            <div class="font12_mod4"><span><img
+                                                        src="{{asset('front/img/icon_pasajero_na.png')}}" alt=""></span>
+                                                PASAJERO</div>
+                                            <div class="color_gray_izq">
+                                                <div class="color_gray">
+                                                    {{ $pasajeros["name"] . ' ' . $pasajeros["last_name"] }}</div>
+                                                <div class="color_gray">{{ $pasajeros["email"] }}</div>
+                                                <div class="color_gray">{{ $pasajeros["phone"] }}</div>
+                                                <div class="font12_mod4">ASIENTO {{ $pasajeros["asiento"] }}</div>
                                             </div>
-                                            @endforeach
+                                            <hr class="hr_mod4">
+                                        </div>
+                                        @endforeach
                                         @endif
                                     </div>
 
@@ -146,14 +147,15 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="">Nombre *</label>
-                                            <input type="text" class="form-control" id="nombre" placeholder="Nombre">
+                                            <input type="text" class="form-control" id="nombre" placeholder="Nombre"
+                                                value="{{ $session['pasajeros'][0]['name'] }}">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="">Apellido *</label>
-                                            <input type="text" class="form-control" id="apellido"
-                                                placeholder="Apellido">
+                                            <input type="text" class="form-control" id="apellido" placeholder="Apellido"
+                                                value="{{ $session['pasajeros'][0]['last_name'] }}">
                                         </div>
                                     </div>
 
@@ -161,47 +163,117 @@
 
                                 <div class="form-group">
                                     <label for="">Telefono (10 digitos)(opcional)</label>
-                                    <input type="text" class="form-control" id="telefono" placeholder="Telefono">
+                                    <input type="text" class="form-control" id="telefono" placeholder="Telefono"
+                                        value="{{ $session['pasajeros'][0]['phone'] }}">
                                 </div>
                                 <div class="form-group">
                                     <label for="">Direccion de correo electronico *</label>
-                                    <input type="text" class="form-control" id="correo" placeholder="Correo">
+                                    <input type="text" class="form-control" id="correo" placeholder="Correo"
+                                        value="{{ $session['pasajeros'][0]['email'] }}">
                                 </div>
 
 
-                                <div class="total_mod4">TOTAL: ${{ number_format(($travel->route->price * count($session["pasajeros"])), 2, '.', ',') }}</div>
+                                <div class="total_mod4">TOTAL:
+                                    ${{ number_format(($travel->route->price * count($session["pasajeros"])), 2, '.', ',') }}
+                                </div>
 
                                 <div class="descripcion_pago_mod4">
                                     <div class="radio">
-                                        <label><input type="radio" name="optradio" checked=""> Pago con Tarjeta de
-                                            Credito o
-                                            Debito</label>
+                                        <input type="radio" name="optradio" id="card-check" class="payment-check">
+                                        <label for="card-check">Pago con Tarjeta de Crédito o Débito</label>
                                     </div>
                                     <div class="radio">
-                                        <label><input type="radio" name="optradio"> Oxxo Pay Payment</label>
+                                        <input type="radio" name="optradio" id="oxxo-check" class="payment-check">
+                                        <label for="oxxo-check">Oxxo Pay Payment</label>
                                     </div>
-                                    <div class="radio">
-                                        <label><input type="radio" name="optradio"> PayPal Express Checkout</label>
-                                    </div>
-                                    <div class="radio">
-                                        <label><input type="radio" name="optradio"> Tranferencia bancaria SPEI</label>
-                                    </div>
+
                                     <hr class="hr_mod4_pagar">
-                                    <div>Tus datos personales se utilizaran para procesar tu pedido,
-                                        mejorar tu experiencia en esta web y otros propositos descritos
-                                        en nuestra <a class="a_mod4_pagar" href="#">politica de privacidad.</a>
+
+                                    <div class="payment-container p-2" id="card-container">
+                                        <form action="{{ url('payment/cart') }}" method="POST" id="card-form">
+                                            @csrf
+                                            <div class="row">
+                                                <span class="card-errors"></span>
+                                                <div class="col-md-12">
+                                                    <div class="form-group">
+                                                        <label for="">Nombre del tarjetahabiente *</label>
+                                                        <input type="text" class="form-control" id="nombre"
+                                                            placeholder="Nombre" size="20" data-conekta="card[name]">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="form-group">
+                                                        <label for="">Número de tarjeta *</label>
+                                                        <input type="text" class="form-control" id="tarjeta"
+                                                            placeholder="Número de tarjeta" size="20"
+                                                            data-conekta="card[number]">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label for="">CVC *</label>
+                                                        <input type="text" class="form-control" id="cvc"
+                                                            placeholder="CVC" size="4" data-conekta="card[cvc]">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label for="">Año (AAAA) *</label>
+                                                        <input type="text" class="form-control" id="cvc"
+                                                            placeholder="Año de expiración" size="4"
+                                                            data-conekta="card[exp_year]">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label for="">Mes (MM) *</label>
+                                                        <input type="text" class="form-control" id="cvc"
+                                                            placeholder="Mes de expiración" size="2"
+                                                            data-conekta="card[exp_month]">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-12">Tus datos personales se utilizaran para procesar tu pedido,
+                                                    mejorar tu experiencia en esta web y otros propositos descritos
+                                                    en nuestra <a class="a_mod4_pagar" href="#">politica de privacidad.</a>
+                                                </div>
+                                                <div class="col-md-12 title_leido_mod4">
+                                                    <input type="checkbox" aria-label="Checkbox for following text input">
+                                                    He leido y estos de acuerdo con los <a class="a_mod4_pagar" href="#">
+                                                        terminos y condiciones</a> de
+                                                    la web*
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="form-group pt-3">
+                                                        <button type="submit"
+                                                            class="btn btn-danger w-100">Pagar</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                        <hr class="hr_mod4_pagar">
                                     </div>
-                                    <div class="title_leido_mod4">
-                                        <input type="checkbox" aria-label="Checkbox for following text input">
-                                        He leido y estos de acuerdo con los <a class="a_mod4_pagar" href="#">
-                                            terminos y condiciones</a> de
-                                        la web*
+                                    <div class="payment-container" id="oxxo-container">
+
+                                        <div class="col-md-12">Tus datos personales se utilizaran para procesar tu pedido,
+                                            mejorar tu experiencia en esta web y otros propositos descritos
+                                            en nuestra <a class="a_mod4_pagar" href="#">politica de privacidad.</a>
+                                        </div>
+                                        <div class="col-md-12 title_leido_mod4">
+                                            <input type="checkbox" aria-label="Checkbox for following text input">
+                                            He leido y estos de acuerdo con los <a class="a_mod4_pagar" href="#">
+                                                terminos y condiciones</a> de
+                                            la web*
+                                        </div>
+                                        <div class="col-md-12 mt-3">
+                                            <div class="form-group">
+                                                <button type="submit" class="btn btn-danger w-100">Generar número de
+                                                    referencia de pago</button>
+                                            </div>
+                                        </div>
+                                        <hr class="hr_mod4_pagar">
                                     </div>
                                 </div>
-
-
-                                <div class="div_btn_contunuar_mod3"><button type="button"
-                                        class="btn_consultar_main">COMPRAR</button></div>
                             </div>
                         </div>
                     </div>
@@ -220,12 +292,56 @@
 <script src="{{ asset('front/js/vendor/handlebars.min.js') }}"></script>
 <script src="{{ asset('front/js/vendor/typeahead.bundle.min.js') }}"></script>
 <script src="{{ asset('front/js/pages/demo.typehead.js') }}"></script>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdn.conekta.io/js/latest/conekta.js"></script>
+
 <script type="text/javascript">
     $(document).ready(function() {
         $('#asiento').select2({
             placeholder: "Seleccione su asiento"
         });
     });
+
+    $(".payment-check").on('change', function(){
+
+        if($("#card-check").is(":checked")){
+            $(".payment-container").hide();
+            $("#card-container").show();
+        }
+
+        if($("#oxxo-check").is(":checked")){
+            $(".payment-container").hide();
+            $("#oxxo-container").show();
+        }
+    });
+    
 </script>
 
+<script type="text/javascript">
+    Conekta.setPublicKey('key_MkiU5dwbUbyqjNHoFv5NvVA');
+  
+    var conektaSuccessResponseHandler = function(token) {
+      var $form = $("#card-form");
+      //Inserta el token_id en la forma para que se envíe al servidor
+       $form.append($('<input type="hidden" name="conektaTokenId" id="conektaTokenId">').val(token.id));
+      $form.get(0).submit(); //Hace submit
+    };
+    var conektaErrorResponseHandler = function(response) {
+      var $form = $("#card-form");
+      $form.find(".card-errors").text(response.message_to_purchaser);
+      $form.find("button").prop("disabled", false);
+    };
+  
+    //jQuery para que genere el token después de dar click en submit
+    $(function () {
+      $("#card-form").submit(function(event) {
+        var $form = $(this);
+        // Previene hacer submit más de una vez
+        $form.find("button").prop("disabled", true);
+        Conekta.Token.create($form, conektaSuccessResponseHandler, conektaErrorResponseHandler);
+        return false;
+      });
+    });
+</script>
 @endsection

@@ -67,7 +67,7 @@
                                     <td>{{ ($travel->driver) ? $travel->driver->fullname() : '--'}}
                                     </td>
                                     <td>{{ $travel->date }}</td>
-                                    <td>{{ $travel->hour }}</td>
+                                    <td>{{ $travel->hour_ini }}</td>
                                     <td>
                                         @php
                                         $checked = ""

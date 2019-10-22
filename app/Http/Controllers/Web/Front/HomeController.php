@@ -118,6 +118,7 @@ class HomeController extends Controller
         $rules = [
             'asiento' => 'required|numeric|min:1',
             'name' => 'required',
+            'last_name' => 'required',
             'email' => 'required|email',
             'phone' => 'required',
             'travel_id' => 'required|numeric|min:1',
@@ -130,6 +131,7 @@ class HomeController extends Controller
                 'numeric' => 'El asiento seleccionado debe ser diferente de cero',
             ],
             'name.required' => 'Debe agregar el nombre del pasajero.',
+            'last_name.required' => 'Debe agregar los apellidos del pasajero.',
             'email.required' => 'Debe agregar un correo electrónico.',
             'email.email' => 'El formato del correo electrónico no es válido.',
             'phone.required' => 'Debe agregar un teléfono.',
@@ -150,6 +152,7 @@ class HomeController extends Controller
             $request->session()->push('vantogo.pasajeros', [
                 "asiento" => $request->asiento,
                 "name" => $request->name,
+                "last_name" => $request->last_name,
                 "email" => $request->email,
                 "phone" => $request->phone,
             ]);
