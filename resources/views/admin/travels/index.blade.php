@@ -62,9 +62,9 @@
                                 <tr>
                                     <th scope="row">{{ $travel->id }}</th>
                                     <td>{{ $travel->code }}</td>
-                                    <td>{{ $travel->route->code }}</td>
+                                    <td>{{ ($travel->route) ? $travel->route->code : '--' }}</td>
                                     <td>{{ $travel->car->brand . ' - ' . $travel->car->registration }}</td>
-                                    <td>{{ $travel->driver->name . ' ' . $travel->driver->first_last_name . ' ' . $travel->driver->second_last_name }}
+                                    <td>{{ ($travel->driver) ? $travel->driver->fullname() : '--'}}
                                     </td>
                                     <td>{{ $travel->date }}</td>
                                     <td>{{ $travel->hour }}</td>
