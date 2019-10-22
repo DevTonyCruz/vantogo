@@ -10,8 +10,8 @@ File: Icons Css File
 
 @font-face {
   font-family: "dripicons-v2";
-  src: url("/admin/fonts/dripicons-v2.eot");
-  src: url("/admin/fonts/dripicons-v2.eot?#iefix") format("embedded-opentype"), url("/admin/fonts/dripicons-v2.woff") format("woff"), url("/admin/fonts/dripicons-v2.ttf") format("truetype"), url("/admin/fonts/dripicons-v2.svg#dripicons-v2") format("svg");
+  src: url("http://adrenalinalabs.online/vantogo/admin/fonts/dripicons-v2.eot");
+  src: url("http://adrenalinalabs.online/vantogo/admin/fonts/dripicons-v2.eot?#iefix") format("embedded-opentype"), url("http://adrenalinalabs.online/vantogo/admin/fonts/dripicons-v2.woff") format("woff"), url("http://adrenalinalabs.online/vantogo/admin/fonts/dripicons-v2.ttf") format("truetype"), url("http://adrenalinalabs.online/vantogo/admin/fonts/dripicons-v2.svg#dripicons-v2") format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -847,8 +847,8 @@ File: Icons Css File
 
 @font-face {
   font-family: "Material Design Icons";
-  src: url("/admin/fonts/materialdesignicons-webfont.eot?v=3.4.93");
-  src: url("/admin/fonts/materialdesignicons-webfont.eot?#iefix&v=3.4.93") format("embedded-opentype"), url("/admin/fonts/materialdesignicons-webfont.woff2?v=3.4.93") format("woff2"), url("/admin/fonts/materialdesignicons-webfont.woff?v=3.4.93") format("woff"), url("/admin/fonts/materialdesignicons-webfont.ttf?v=3.4.93") format("truetype"), url("/admin/fonts/materialdesignicons-webfont.svg?v=3.4.93#materialdesigniconsregular") format("svg");
+  src: url("http://adrenalinalabs.online/vantogo/admin/fonts/materialdesignicons-webfont.eot?v=3.4.93");
+  src: url("http://adrenalinalabs.online/vantogo/admin/fonts/materialdesignicons-webfont.eot?#iefix&v=3.4.93") format("embedded-opentype"), url("http://adrenalinalabs.online/vantogo/admin/fonts/materialdesignicons-webfont.woff2?v=3.4.93") format("woff2"), url("http://adrenalinalabs.online/vantogo/admin/fonts/materialdesignicons-webfont.woff?v=3.4.93") format("woff"), url("http://adrenalinalabs.online/vantogo/admin/fonts/materialdesignicons-webfont.ttf?v=3.4.93") format("truetype"), url("http://adrenalinalabs.online/vantogo/admin/fonts/materialdesignicons-webfont.svg?v=3.4.93#materialdesigniconsregular") format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -14897,7 +14897,6 @@ File: Icons Css File
 }
 
 .mdi-rotate-45:before {
-  -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
 }
 
@@ -14921,7 +14920,6 @@ File: Icons Css File
 }
 
 .mdi-rotate-90:before {
-  -webkit-transform: rotate(90deg);
   transform: rotate(90deg);
 }
 
@@ -14945,7 +14943,6 @@ File: Icons Css File
 }
 
 .mdi-rotate-135:before {
-  -webkit-transform: rotate(135deg);
   transform: rotate(135deg);
 }
 
@@ -14969,7 +14966,6 @@ File: Icons Css File
 }
 
 .mdi-rotate-180:before {
-  -webkit-transform: rotate(180deg);
   transform: rotate(180deg);
 }
 
@@ -14993,7 +14989,6 @@ File: Icons Css File
 }
 
 .mdi-rotate-225:before {
-  -webkit-transform: rotate(225deg);
   transform: rotate(225deg);
 }
 
@@ -15017,7 +15012,6 @@ File: Icons Css File
 }
 
 .mdi-rotate-270:before {
-  -webkit-transform: rotate(270deg);
   transform: rotate(270deg);
 }
 
@@ -15041,12 +15035,10 @@ File: Icons Css File
 }
 
 .mdi-rotate-315:before {
-  -webkit-transform: rotate(315deg);
   transform: rotate(315deg);
 }
 
 .mdi-flip-h:before {
-  -webkit-transform: scaleX(-1);
   transform: scaleX(-1);
   -webkit-filter: FlipH;
           filter: FlipH;
@@ -15054,7 +15046,6 @@ File: Icons Css File
 }
 
 .mdi-flip-v:before {
-  -webkit-transform: scaleY(-1);
   transform: scaleY(-1);
   -webkit-filter: FlipV;
           filter: FlipV;
@@ -15068,24 +15059,20 @@ File: Icons Css File
 
 @-webkit-keyframes mdi-spin {
   0% {
-    -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
   }
 
   100% {
-    -webkit-transform: rotate(359deg);
     transform: rotate(359deg);
   }
 }
 
 @keyframes mdi-spin {
   0% {
-    -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
   }
 
   100% {
-    -webkit-transform: rotate(359deg);
     transform: rotate(359deg);
   }
 }

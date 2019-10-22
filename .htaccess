@@ -1,0 +1,33 @@
+#Bloquear acceso a .env o .env.example
+<Files ~ "^.*\.(example|env)">
+  deny from all
+</Files>
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  #Redirect Trailing Slashes If Not A Folder... (quitar diagonal del final si no es una carpeta)
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_URI} (.+)/$
+  RewriteRule ^ %1 [L,R=301]
+  
+  #Establecer prioridad de index en carpetas (si no existe index.php redirecciona server.php)
+  DirectoryIndex index.php server.php
+  
+  #Agregar public a URL en archivos en raiz
+  RewriteRule (favicon\.ico|index\.php|robots\.txt|info\.php)$ public/$1 [L,NC]
+  
+  #Agregar public a URL en archivos en subcarpetas en raiz
+  RewriteCond %{REQUEST_URI} (\.css|\.js|\.png|\.jpg|\.jpeg|\.svg|\.gif|\.ico|\.woff2|\.woff|robots\.txt)$ [NC]
+  RewriteRule ^(admin|assets|fonts|front|images)/(.*)$ public/$1/$2 [L,NC]
+  
+  #Handle Front Controller... (Manejar URLs virtuales)
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteRule ^ server.php [L]
+  
+  ###CAMBIAR DEMO###
+  #Bloquear acceso a todo excepto a raiz, a /public y a server.php
+  RewriteCond %{REQUEST_URI} !^/vantogo/$
+  #RewriteCond %{REQUEST_URI} !^/public/.*
+  RewriteCond %{REQUEST_URI} !(server\.php)$ [NC]
+  RewriteRule ^(.*)$ - [F,NC]
+</IfModule>

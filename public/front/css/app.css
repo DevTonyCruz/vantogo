@@ -8415,7 +8415,7 @@ body[data-layout="detached"] {
     color: #6c757d; }
 
 .leftbar-user {
-  background: url("../images/waves.png") no-repeat;
+  background: url("../../images/waves.png") no-repeat;
   padding: 30px 20px;
   text-align: center; }
   .leftbar-user .leftbar-user-name {
@@ -9676,7 +9676,7 @@ input[data-switch="dark"]:checked + label {
           transform: rotate(30deg); }
 
 .cta-box {
-  background-image: url(../images/bg-pattern.png);
+  background-image: url('../../images/bg-pattern.png');
   background-size: cover; }
   .cta-box .cta-box-title {
     font-size: 20px;
@@ -9912,7 +9912,7 @@ input[data-switch="dark"]:checked + label {
     white-space: inherit; } }
 
 body.authentication-bg {
-  background-image: url("../images/bg-pattern-light.svg");
+  background-image: url("../../images/bg-pattern-light.svg");
   background-size: cover;
   background-position: center; }
 
@@ -9938,7 +9938,7 @@ body.authentication-bg {
   -webkit-box-align: stretch;
       -ms-flex-align: stretch;
           align-items: stretch;
-  background: url("../images/bg-auth.jpg") center;
+  background: url("../../images/bg-auth.jpg") center;
   background-size: cover; }
   .auth-fluid .auth-fluid-form-box {
     max-width: 480px;

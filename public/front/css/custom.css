@@ -28,7 +28,7 @@ footer {
 }
 
 .navbar-toggler-icon {
-  background-image: url(/images/white-hamburger-icon-8.jpg?5cb32de1a486206995edc8f99be07b2c);
+  background-image: url('../../images/white-hamburger-icon-8.jpg?5cb32de1a486206995edc8f99be07b2c');
   width: 40px;
 }
 
@@ -113,7 +113,7 @@ span.input-group-text {
 }
 
 .row_index {
-  background-image: url(/images/banner_principal.jpg?2ae4d57a39a99b51ce12656167b93db0);
+  background-image: url('../../images/banner_principal.jpg?2ae4d57a39a99b51ce12656167b93db0');
   background-position: center;
   background-size: cover;
   min-height: 400px;
@@ -237,7 +237,7 @@ img.icons_redes {
 }
 
 .col3_mod2_ticket {
-  background-image: url(/images/ticket.png?b2ae8a5e965e77d512214e9d0e691fcc);
+  background-image: url('../../images/ticket.png?b2ae8a5e965e77d512214e9d0e691fcc');
   background-size: cover;
   margin: 20px;
   background-repeat: no-repeat;
@@ -1043,7 +1043,7 @@ span.img_chofer_ticket_b {
 /* page */
 
 .bg-ticket{
-  background-image: url('/images/ticket.png');
+  background-image: url('../../images/ticket.png');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top;
