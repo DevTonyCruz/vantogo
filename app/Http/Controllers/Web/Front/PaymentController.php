@@ -32,18 +32,12 @@ class PaymentController extends Controller
 
         $travel = Travels::where('id', $viaje)->first();
 
-        /*
-            $table->integer('travel_id');
-            $table->integer('cantidad');
-            $table->float('total');
-            $table->string('tipo_pago');
-            $table->string('referencia');
-            $table->integer('status');*/
-
         $newOrder = new Payment();
         $newOrder->travel_id = $viaje;
         $newOrder->cantidad = $cantidad;
         $newOrder->total = $travel->route->price * $cantidad;
+
+
 
         if($newOrder->save()){
 
@@ -83,12 +77,14 @@ class PaymentController extends Controller
                         ) //charges
                     ) //order
                 );
+
+                dd($order);
             } catch (\Conekta\ProcessingError $error) {
-                echo $error->getMessage();
+                dd($error->getMessage());
             } catch (\Conekta\ParameterValidationError $error) {
-                echo $error->getMessage();
+                dd($error->getMessage());
             } catch (\Conekta\Handler $error) {
-                echo $error->getMessage();
+                dd($error->getMessage());
             }
         }
     }
