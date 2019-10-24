@@ -176,8 +176,10 @@ Route::post('/pasajeros',       'Web\Front\HomeController@pasajeros')->name('fro
 Route::get('/pago',             'Web\Front\HomeController@pago')->name('front.home.pago');
 
 Route::group(['prefix' => 'payment'], function () {
-    Route::post('/cart', 'Web\Front\PaymentController@cartPayment')->name('payment.cart');
+    Route::post('conekta/cart', 'Web\Front\PaymentController@cartConektaPayment')->name('payment.conekta.cart');
+    Route::post('conekta/oxxo', 'Web\Front\PaymentController@oxxoConektaPayment')->name('payment.conekta.oxxo');
 });
+
 /*Route::post('/',                'Web\Admin\RolesController@store')->name('roles.store');
 Route::get('/{id}',             'Web\Admin\RolesController@show')->name('roles.show');
 Route::get('/{id}/edit',        'Web\Admin\RolesController@edit')->name('roles.edit');

@@ -6,4 +6,7 @@ require('../../admin/js/bootstrap');
 
 require('bootstrap-datepicker');
 
- const Swal = window.Swal = require('sweetalert2');
+const Swal = window.Swal = require('sweetalert2');
+
+const RequestObject = window.RequestObject = require('../js/request');
+const PaymentObject = window.PaymentObject = require('../js/payment');

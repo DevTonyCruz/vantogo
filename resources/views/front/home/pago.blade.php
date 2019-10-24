@@ -1,7 +1,6 @@
 @extends('front.layouts.app')
 
 @section('content')
-
 <div class="row no-gutters row_main_mod2 mb-5">
 
 
@@ -73,7 +72,8 @@
                             <div class="col3_mod4_ticket">
                                 <div class="div_ticket_main_mod4 text-center">
 
-                                    <div class="font12_mod4"><img src="img/icon_fecha_na.png" alt=""> FECHA DE SALIDA
+                                    <div class="font12_mod4"><img src="{{ asset('front/img/icon_fecha_na.png')}}"
+                                            alt=""> FECHA DE SALIDA
                                     </div>
                                     @php
                                     $date = explode('/', \Carbon\Carbon::parse($travel->date)->format('m/d/Y'));
@@ -84,14 +84,14 @@
 
                                     <div class="row">
                                         <div class="col-md-6">
-                                            <div class="font12_mod4"><span><img src="img/icon_reloj_na.png"
-                                                        alt=""></span>
+                                            <div class="font12_mod4"><span><img
+                                                        src="{{ asset('front/img/icon_reloj_na.png')}}" alt=""></span>
                                                 SALIDA</div>
                                             <div>{{ substr($travel->hour_ini, 0, 5) }}</div>
                                         </div>
                                         <div class="col-md-6">
-                                            <div class="font12_mod4"><span><img src="img/icon_reloj_na.png"
-                                                        alt=""></span>
+                                            <div class="font12_mod4"><span><img
+                                                        src="{{ asset('front/img/icon_reloj_na.png')}}" alt=""></span>
                                                 LLEGADA</div>
                                             <div>{{ substr($travel->hour_fin, 0, 5) }}</div>
                                         </div>
@@ -189,9 +189,8 @@
 
                                     <hr class="hr_mod4_pagar">
 
-                                    <div class="payment-container p-2" id="card-container">
-                                        <form action="{{ url('payment/cart') }}" method="POST" id="card-form">
-                                            @csrf
+                                    <div class="payment-container p-2" id="card-conekta-container">
+                                        <form action="" method="POST" id="card-form-conekta">
                                             <div class="row">
                                                 <span class="card-errors"></span>
                                                 <div class="col-md-12">
@@ -233,29 +232,35 @@
                                                     </div>
                                                 </div>
 
-                                                <div class="col-md-12">Tus datos personales se utilizaran para procesar tu pedido,
+                                                <div class="col-md-12">Tus datos personales se utilizaran para procesar
+                                                    tu
+                                                    pedido,
                                                     mejorar tu experiencia en esta web y otros propositos descritos
-                                                    en nuestra <a class="a_mod4_pagar" href="#">politica de privacidad.</a>
+                                                    en nuestra <a class="a_mod4_pagar" href="#">politica de
+                                                        privacidad.</a>
                                                 </div>
                                                 <div class="col-md-12 title_leido_mod4">
-                                                    <input type="checkbox" aria-label="Checkbox for following text input">
-                                                    He leido y estos de acuerdo con los <a class="a_mod4_pagar" href="#">
+                                                    <input type="checkbox" id="accept-terms-card-conekta"
+                                                        name="accept-terms-card-conekta">
+                                                    He leido y estos de acuerdo con los <a class="a_mod4_pagar"
+                                                        href="#">
                                                         terminos y condiciones</a> de
                                                     la web*
                                                 </div>
                                                 <div class="col-md-12">
                                                     <div class="form-group pt-3">
-                                                        <button type="submit"
+                                                        <button type="button" id="conekta-card"
                                                             class="btn btn-danger w-100">Pagar</button>
                                                     </div>
                                                 </div>
                                             </div>
+                                            <hr class="hr_mod4_pagar">
                                         </form>
-                                        <hr class="hr_mod4_pagar">
                                     </div>
-                                    <div class="payment-container" id="oxxo-container">
+                                    <div class="payment-container" id="oxxo-conekta-container">
 
-                                        <div class="col-md-12">Tus datos personales se utilizaran para procesar tu pedido,
+                                        <div class="col-md-12">Tus datos personales se utilizaran para procesar tu
+                                            pedido,
                                             mejorar tu experiencia en esta web y otros propositos descritos
                                             en nuestra <a class="a_mod4_pagar" href="#">politica de privacidad.</a>
                                         </div>
@@ -274,11 +279,36 @@
                                         <hr class="hr_mod4_pagar">
                                     </div>
                                 </div>
+
+                                <div class="d-none">
+                                    <input type="hidden" id="oxxo-key-public" name="oxxo-key-public"
+                                        value="{{ config('payment.conekta.public', 'Laravel') }}">
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="error-payment" tabindex="-1" role="dialog" aria-labelledby="error-payment" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="error-payment">Error al generar el pago</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <ul class="print-error-msg"></ul>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            <button type="button" class="btn btn-primary">Continuar</button>
+        </div>
         </div>
     </div>
 </div>
@@ -288,60 +318,35 @@
 @endsection
 
 @section('js')
-<!-- Typehead -->
-<script src="{{ asset('front/js/vendor/handlebars.min.js') }}"></script>
-<script src="{{ asset('front/js/vendor/typeahead.bundle.min.js') }}"></script>
-<script src="{{ asset('front/js/pages/demo.typehead.js') }}"></script>
+<script src="{{ asset('front/js/request.js') }}"></script>
 
+<!-- Conekta Payment -->
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script type="text/javascript" src="https://cdn.conekta.io/js/latest/conekta.js"></script>
 
 <script type="text/javascript">
-    $(document).ready(function() {
-        $('#asiento').select2({
-            placeholder: "Seleccione su asiento"
-        });
-    });
+    // Se obtiene la llave publica de conekta
+    let CONEKTA_PUBLIC_KEY = $('#oxxo-key-public').val();
+    Conekta.setPublicKey(CONEKTA_PUBLIC_KEY);
+</script>
+
+<!-- Payment -->
+<script src="{{ asset('front/js/payment.js') }}"></script>
+
+<script type="text/javascript">
 
     $(".payment-check").on('change', function(){
 
         if($("#card-check").is(":checked")){
             $(".payment-container").hide();
-            $("#card-container").show();
+            $("#card-conekta-container").show();
         }
 
         if($("#oxxo-check").is(":checked")){
             $(".payment-container").hide();
-            $("#oxxo-container").show();
+            $("#oxxo-conekta-container").show();
         }
     });
     
-</script>
-
-<script type="text/javascript">
-    Conekta.setPublicKey('key_MkiU5dwbUbyqjNHoFv5NvVA');
-  
-    var conektaSuccessResponseHandler = function(token) {
-      var $form = $("#card-form");
-      //Inserta el token_id en la forma para que se envíe al servidor
-       $form.append($('<input type="hidden" name="conektaTokenId" id="conektaTokenId">').val(token.id));
-      $form.get(0).submit(); //Hace submit
-    };
-    var conektaErrorResponseHandler = function(response) {
-      var $form = $("#card-form");
-      $form.find(".card-errors").text(response.message_to_purchaser);
-      $form.find("button").prop("disabled", false);
-    };
-  
-    //jQuery para que genere el token después de dar click en submit
-    $(function () {
-      $("#card-form").submit(function(event) {
-        var $form = $(this);
-        // Previene hacer submit más de una vez
-        $form.find("button").prop("disabled", true);
-        Conekta.Token.create($form, conektaSuccessResponseHandler, conektaErrorResponseHandler);
-        return false;
-      });
-    });
 </script>
 @endsection

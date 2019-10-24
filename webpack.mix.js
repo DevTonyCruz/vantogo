@@ -14,8 +14,10 @@ const mix = require('laravel-mix');
 mix.js('resources/admin/js/app.js', 'public/admin/js')
     .js('resources/admin/js/main.js', 'public/admin/js')
     .sass('resources/admin/sass/app.scss', 'public/admin/css')
-    .sass('resources/admin/sass/icons.scss', 'public/admin/css');
+    .sass('resources/admin/sass/icons.scss', 'public/admin/css')
 
-    /*.js('resources/front/js/app.js', 'public/front/js')
-    .sass('resources/front/sass/app.scss', 'public/front/css')
+    .js('resources/front/js/app.js', 'public/front/js')
+    .js('resources/front/js/payment.js', 'public/front/js')
+    .js('resources/front/js/request.js', 'public/front/js');
+    /*.sass('resources/front/sass/app.scss', 'public/front/css')
     .sass('resources/front/sass/custom.scss', 'public/front/css')*/
