@@ -44,19 +44,23 @@ class DriversController extends Controller
             'name' => 'required',
             'first_last_name' => 'required',
             'second_last_name' => 'required',
+            'file_driver' => 'required|mimes:png,jpeg,jpg',
             'email' => 'required|email',
             'license' => 'required',
-            'photo' => 'mimes:png,jpeg,jpg',
+            'file_license' => 'required|mimes:png,jpeg,jpg',
         ];
 
         $messages = [
             'name.required' => 'El campo nombre es requerido',
             'first_last_name.required' => 'El campo apellido paterno es requerido',
             'second_last_name.required' => 'El campo apellido materno es requerido',
+            'file_license.required' => 'El campo imagen del chofer es requerida',
+            'file_license.mimes' => 'El campo imagen del chofer solo acepta los siguientes formatos; png, jpeg y jpg',
             'email.required' => 'El campo correo electrónico es requerido',
             'email.email' => 'El campo correo electrónico no es válido',
-            'license.required' => 'El campo licencia es requerido',
-            'photo.mimes' => 'El campo imagen solo acepta los siguientes formatos; png, jpeg y jpg',
+            'license.required' => 'El campo licencia es requerida',
+            'file_license.required' => 'El campo imagen de la licecia es requerido',
+            'file_license.mimes' => 'El campo imagen de la licecia solo acepta los siguientes formatos; png, jpeg y jpg',
         ];
 
         $this->validate($request, $rules, $messages);
@@ -78,9 +82,14 @@ class DriversController extends Controller
 
                 if ($driver->save()) {
 
-                    if ($request->file('photo')) {
-                        $path = Storage::disk('public')->put('images/storage/drivers', $request->file('photo'));
-                        $driver->fill(['photo' => $path])->save();
+                    if ($request->file('file_driver')) {
+                        $path = Storage::disk('public')->put('images/storage/drivers/' . $driver->id, $request->file('file_driver'));
+                        $driver->fill(['file_driver' => $path])->save();
+                    }
+
+                    if ($request->file('file_license')) {
+                        $path = Storage::disk('public')->put('images/storage/drivers/' . $driver->id, $request->file('file_license'));
+                        $driver->fill(['file_license' => $path])->save();
                     }
 
                     return redirect()->route('drivers.index');
@@ -88,7 +97,7 @@ class DriversController extends Controller
 
                 return back()->with('status', 'Por el momento no se puede realizar la acción solicitada.');
             } else {
-                return back()->with('status', 'Ya existe un registro con estos datos.');
+                return back()->with('status', 'Ya existe un registro con estos datos.')->withInput();
             }
         } catch (QueryException $e) {
             return back()->with('status', $e->getMessage());
@@ -132,19 +141,21 @@ class DriversController extends Controller
             'name' => 'required',
             'first_last_name' => 'required',
             'second_last_name' => 'required',
+            'file_driver' => 'mimes:png,jpeg,jpg',
             'email' => 'required|email',
             'license' => 'required',
-            //'photo' => 'mimes:png,jpeg,jpg',
+            'file_license' => 'mimes:png,jpeg,jpg',
         ];
 
         $messages = [
             'name.required' => 'El campo nombre es requerido',
             'first_last_name.required' => 'El campo apellido paterno es requerido',
             'second_last_name.required' => 'El campo apellido materno es requerido',
+            'file_driver.mimes' => 'El campo imagen del chofer solo acepta los siguientes formatos; png, jpeg y jpg',
             'email.required' => 'El campo correo electrónico es requerido',
             'email.email' => 'El campo correo electrónico no es válido',
-            'license.required' => 'El campo licencia es requerido',
-            //'photo.mimes' => 'El campo imagen solo acepta los siguientes formatos; png, jpeg y jpg',
+            'license.required' => 'El campo licencia es requerida',
+            'file_license.mimes' => 'El campo imagen de la licecia solo acepta los siguientes formatos; png, jpeg y jpg',
         ];
 
         $this->validate($request, $rules, $messages);
@@ -166,14 +177,24 @@ class DriversController extends Controller
 
                 if ($driver->save()) {
 
-                    if ($request->file('photo')) {
+                    if ($request->file('file_driver')) {
 
-                        if (@getimagesize(asset($driver->photo))) {
-                            unlink($driver->photo);
+                        if (@getimagesize(asset($driver->file_driver))) {
+                            unlink($driver->file_driver);
                         }
 
-                        $path = Storage::disk('public')->put('images/storage/drivers', $request->file('photo'));
-                        $driver->fill(['photo' => $path])->save();
+                        $path = Storage::disk('public')->put('images/storage/drivers/' . $driver->id, $request->file('file_driver'));
+                        $driver->fill(['file_driver' => $path])->save();
+                    }
+
+                    if ($request->file('file_license')) {
+
+                        if (@getimagesize(asset($driver->file_license))) {
+                            unlink($driver->file_license);
+                        }
+
+                        $path = Storage::disk('public')->put('images/storage/drivers/' . $driver->id, $request->file('file_license'));
+                        $driver->fill(['file_license' => $path])->save();
                     }
 
                     return redirect()->route('drivers.index');

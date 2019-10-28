@@ -296,14 +296,12 @@ span.img_chofer_ticket_b {
 
 .div_ticket_row2_mod2 {
   bottom: 40px;
-  padding: 20px 20px 0;
   color: #ffffff;
   font-weight: bold;
 }
 
 .div_ticket_row2_mod4 {
   bottom: 40px;
-  padding: 20px 0px 0;
   color: #ffffff;
   font-weight: bold;
 }
@@ -623,6 +621,43 @@ span.img_chofer_ticket_b {
   cursor: no-drop;
 }
 
+.payment-container{
+    display: none;
+}
+
+.title-final{
+  color: #ff4439;
+}
+
+.text-14{
+  font-size: 14px;
+}
+
+
+.btn-final {
+  color: #fff;
+  background-color: #ff4439;
+  border-color: #ff4439; }
+  .btn-final:hover {
+    color: #fff;
+    background-color: #f9375e;
+    border-color: #f82b54; }
+  .btn-final:focus, .btn-final.focus {
+    -webkit-box-shadow: 0 0 0 0.2rem rgba(251, 116, 144, 0.5);
+            box-shadow: 0 0 0 0.2rem rgba(251, 116, 144, 0.5); }
+  .btn-final.disabled, .btn-final:disabled {
+    color: #fff;
+    background-color: #ff4439;
+    border-color: #ff4439; }
+  .btn-final:not(:disabled):not(.disabled):active, .btn-final:not(:disabled):not(.disabled).active,
+  .show > .btn-final.dropdown-toggle {
+    color: #fff;
+    background-color: #f82b54;
+    border-color: #f81e4a; }
+    .btn-final:not(:disabled):not(.disabled):active:focus, .btn-final:not(:disabled):not(.disabled).active:focus,
+    .show > .btn-final.dropdown-toggle:focus {
+      -webkit-box-shadow: 0 0 0 0.2rem rgba(251, 116, 144, 0.5);
+              box-shadow: 0 0 0 0.2rem rgba(251, 116, 144, 0.5); }
 
 
 
@@ -955,7 +990,6 @@ span.img_chofer_ticket_b {
   }
 
   .div_ticket_row2_mod2 {
-    padding: 20px 30px 0px;
     height: 100%;
   }
 

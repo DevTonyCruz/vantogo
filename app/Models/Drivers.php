@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Drivers extends Model
 {
-    protected $fillable = ['photo'];
+    protected $fillable = ['file_license', 'file_driver'];
 
     public function fullname(){
         $fullname = '';

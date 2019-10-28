@@ -20,8 +20,7 @@
                         </select>
                         <div class="input-group-append icon-select">
                             <span class="input-group-text">
-                                <img src="{{ asset('front/img/icon_pin.png') }}"
-                                    alt="icon_pin"></span>
+                                <img src="{{ asset('front/img/icon_pin.png') }}" alt="icon_pin"></span>
                         </div>
                     </div>
                 </div>
@@ -31,7 +30,8 @@
                             <option></option>
                             @foreach ($destination as $route)
                             <option value="{{ $route->destination }}"
-                                    {{ (old('destino') == $route->destination) ? 'selected' : '' }}>{{ $route->destination }}</option>
+                                {{ (old('destino') == $route->destination) ? 'selected' : '' }}>
+                                {{ $route->destination }}</option>
                             @endforeach
                         </select>
                         <div class="input-group-append icon-select">
@@ -42,8 +42,8 @@
                 </div>
                 <div class="col-xl-3">
                     <div class="input-group">
-                        <input type="text" id="date" name="date" class="form-control date" data-toggle="date-picker"
-                            data-single-date-picker="true" value="{{ old('date') }}" required="">
+                        <input type="text" id="date" name="date" class="form-control date" placeholder="Fecha de salida"
+                            value="{{ old('date') }}" required="" autocomplete="off">
                         <div class="input-group-append">
                             <span class="input-group-text"><img src="{{ asset('front/img/icon_calendario.png') }}"
                                     alt="icon_calendario"></span>
@@ -127,8 +127,31 @@
         $('#origen').select2({
             placeholder: "Origen"
         });
+
         $('#destino').select2({
             placeholder: "Destino"
+        });
+
+        $.fn.datepicker.dates['es'] = {
+            days: ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"],
+            daysShort: ["Dom", "Lun", "Mar", "Mié", "Jue", "Vie", "Sáb"],
+            daysMin: ["Do", "Lu", "Ma", "Mi", "Ju", "Vi", "Sá"],
+            months: ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"],
+            monthsShort: ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"],
+            today: "Hoy",
+            clear: "Borrar",
+            format: "dd/mm/yyyy",
+            titleFormat: "MM yyyy", /* Leverages same syntax as 'format' */
+            weekStart: 0
+        };
+
+        $('#date').datepicker({
+            'orientation': 'bottom',
+            'autoclose': 'true',
+            'language': 'es',
+            format: 'mm/dd/yyyy',
+            changeMonth: true,
+            changeYear: true,
         });
     });
 </script>

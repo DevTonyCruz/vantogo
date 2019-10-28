@@ -13,7 +13,8 @@ class HomeController extends Controller
     public function index(Request $request)
     {
         $origin = Routes::groupBy('origin')->get();
-        $destination = Routes::groupBy('destination')->get();
+        $destination = Routes::groupBy('destination')->get();   
+
         return view('front.home.index', [
             'origin' => $origin,
             'destination' => $destination
@@ -54,11 +55,17 @@ class HomeController extends Controller
 
         if ($route) {
 
+            $date = Carbon::now(); 
+            $date->setTimezone('America/Mexico_City');
+            $endDate = $date->addHours(1);             
+            
             $date = Carbon::parse($request->date)->format('Y-m-d');
             $travels = Travels::where('route_id', $route->id)
-                ->where('date', $date)->get();
+                ->where('date', $date)
+                //->where('hour_ini', '>', $endDate->toTimeString())
+                ->get();
 
-            if (!is_null($travels->first())) {
+            if (count($travels) > 0) {
 
                 $request->session()->forget('vantogo');
                 $request->session()->flush();
@@ -87,6 +94,7 @@ class HomeController extends Controller
         $pasajeros = count($request->session()->get('vantogo.pasajeros'));
         $session = $request->session()->get('vantogo');
         $travel = Travels::where('code', $request->viaje_seleccionado)->first();
+        $ocupados = $this->disponibilidad($travel->id);
 
         if ($cantidad == $pasajeros) {
 
@@ -95,7 +103,8 @@ class HomeController extends Controller
 
         return view('front.home.asientos', [
             'travel' => $travel,
-            'session' => $session
+            'session' => $session,
+            'ocupados' => $ocupados
         ]);
     }
 
@@ -176,9 +185,40 @@ class HomeController extends Controller
         $session = $request->session()->get('vantogo');
         $travel = Travels::where('id', $session['viaje'][0])->first();
 
-        return view('front.home.pago', [
-            'session' => $session,
-            'travel' => $travel
-        ]);
+        if($travel){
+
+            return view('front.home.pago', [
+                'session' => $session,
+                'travel' => $travel
+            ]);
+
+        }else{
+
+            return redirect('/')->with('danger-2', 'El tiempo de espera a caducado, Inicie el proceso nuevamente.');
+        }
+    }
+
+    public function final(Request $request){
+
+        $request->session()->forget('vantogo');
+        $request->session()->flush();
+        
+        return view('front.home.final');
+    }
+
+    public function disponibilidad($travel_id)
+    {
+        $travel = Travels::where('id', $travel_id)->first();
+
+        $ocupados = $travel->orders;
+
+        $asientos = [];
+        foreach ($ocupados as $ocupado) {
+            foreach ($ocupado->details as $asiento) {
+                array_push($asientos, $asiento->place);
+            }
+        }
+
+        return $asientos;
     }
 }

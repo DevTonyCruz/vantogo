@@ -35,7 +35,7 @@
                 <div class="row div_ticket_row2_mod2">
 
                     <div class="col-md-7 pt-3"><img class="img_100" src="{{ asset('front/img/icono_van.png')}}" alt="">
-                        <span class="img_chofer_ticket"><img src="{{ asset('front/img/imagen_chofer.png')}}"></span>
+                        <span class="img_chofer_ticket"><img class="rounded-circle driver-photo-ticket-view" width="50" height="50" src="{{ asset($travels[0]->driver->file_driver) }}"></span>
                     </div>
 
                     <div class="col-md-5 font_chofer">
@@ -167,7 +167,8 @@
                                                 data-hour-ini="{{ substr($travel->hour_ini, 0, 5) }}"
                                                 data-hour-fin="{{ substr($travel->hour_fin, 0, 5) }}"
                                                 data-car-registration="{{ $travel->car->registration }}"
-                                                data-driver-name="{{ $travel->driver->fullname() }}">
+                                                data-driver-name="{{ $travel->driver->fullname() }}"
+                                                data-driver-photo="{{ asset($travel->driver->file_driver) }}">
                                             <label for="seleccionar_{{ $travel->id }}"></label>
                                         </td>
                                     </tr>
@@ -211,11 +212,13 @@
         var hour_fin = $(this).attr('data-hour-fin');
         var registration = $(this).attr('data-car-registration');
         var name = $(this).attr('data-driver-name');
+        var photo = $(this).attr('data-driver-photo');
 
         $('.hour-ini-ticket-view').html(hour_ini);
         $('.hour-fin-ticket-view').html(hour_fin);
         $('.car-registration-ticket-view').html(registration);
         $('.driver-name-ticket-view').html(name);
+        $('.driver-photo-ticket-view').attr('src', photo);
     });
 </script>
 

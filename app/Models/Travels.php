@@ -22,9 +22,20 @@ class Travels extends Model
         return $this->hasOne('App\Models\Drivers', 'id', 'driver_id');
     }
 
+    public function orders()
+    {
+        return $this->hasMany('App\Models\Orders', 'travel_id', 'id');
+    }
+
     public function disponibilidad(){
-        
-        $capacity = $this->car->capacity;
-        return $capacity;
+        $ocupados = $this->orders;
+
+        $reservados = 0;
+        foreach ($ocupados as $ocupado) {
+            $reservados += count($ocupado->details);
+        }
+
+        $capacity = 13; //$this->car->capacity;
+        return $capacity - $reservados;
     }
 }

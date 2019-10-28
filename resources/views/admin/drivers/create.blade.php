@@ -21,6 +21,8 @@
         </div>
     </div>
 
+    {{ dump($errors) }}
+
     <div class="col-lg-6">
         <div class="card">
             <div class="card-body">
@@ -70,6 +72,26 @@
                                 <strong>{{ $errors->first('second_last_name') }}</strong>
                             </span>
                             @endif
+                        </div>
+                    </div>
+
+                    <div class="form-group row mb-3">
+                        <label for="imput_files_id" class="col-12 col-sm-3 col-form-label">* Imagen del chofer</label>
+                        <div class="col-12 col-sm-9">
+                            <div class="custom-file">
+                                <input type="file" id="file_driver" name="file_driver"
+                                    class="custom-file-input form-control {{ $errors->has('file_driver') ? ' is-invalid' : '' }}"
+                                    accept="image/png,image/gif,image/jpeg">
+                                @if ($errors->has('file_driver'))
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $errors->first('file_driver') }}</strong>
+                                </span>
+                                @endif
+                                <img class="img-thumbnail d-none my-1" id="chofer-img-out" width="120" src="" />
+                                <label class="custom-file-label" id="file-label">
+                                    Elige un archivo
+                                </label>
+                            </div>
                         </div>
                     </div>
 
@@ -130,17 +152,18 @@
                     </div>
 
                     <div class="form-group row mb-3">
-                        <label for="photo" class="col-3 col-form-label">Imagen de licencia</label>
-                        <div class="col-9">
+                        <label for="imput_files_id" class="col-12 col-sm-3 col-form-label">* Imagen de licencia</label>
+                        <div class="col-12 col-sm-9">
                             <div class="custom-file">
-                                <input type="file" id="photo" name="photo"
-                                    class="custom-file-input form-control {{ $errors->has('photo') ? ' is-invalid' : '' }}"
-                                    accept="image/x-png,image/gif,image/jpeg">
-                                @if ($errors->has('photo'))
+                                <input type="file" id="file_license" name="file_license"
+                                    class="custom-file-input form-control {{ $errors->has('file_license') ? ' is-invalid' : '' }}"
+                                    accept="image/png,image/gif,image/jpeg">
+                                @if ($errors->has('file_license'))
                                 <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $errors->first('photo') }}</strong>
+                                    <strong>{{ $errors->first('file_license') }}</strong>
                                 </span>
                                 @endif
+                                <img class="img-thumbnail d-none my-1" id="licencia-img-out" width="120" src="" />
                                 <label class="custom-file-label" id="file-label">
                                     Elige un archivo
                                 </label>

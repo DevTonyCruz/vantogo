@@ -77,6 +77,30 @@
                     </div>
 
                     <div class="form-group row mb-3">
+                        <label for="imput_files_id" class="col-12 col-sm-3 col-form-label">* Imagen del chofer</label>
+                        <div class="col-12 col-sm-9">
+                            <div class="custom-file">
+                                <input type="file" id="file_driver" name="file_driver"
+                                    class="custom-file-input form-control {{ $errors->has('file_driver') ? ' is-invalid' : '' }}"
+                                    accept="image/png,image/gif,image/jpeg">
+                                @if ($errors->has('file_driver'))
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $errors->first('file_driver') }}</strong>
+                                </span>
+                                @endif
+                                @if(is_null($driver->file_driver))
+                                <img class="img-thumbnail d-none my-1" id="chofer-img-out" width="120" src="" />
+                                @else
+                                <img class="img-thumbnail my-1" id="chofer-img-out" width="120" src="{{ asset($driver->file_driver) }}" style="display: initial; vertical-align: unset;" />
+                                @endif
+                                <label class="custom-file-label" id="file-label">
+                                    Elige un archivo
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group row mb-3">
                         <label for="email" class="col-3 col-form-label">Correo electrónico</label>
                         <div class="col-9">
                             <input type="text" id="email" name="email"
@@ -133,26 +157,26 @@
                     </div>
 
                     <div class="form-group row mb-3">
-                        <label for="photo" class="col-3 col-form-label">Imagen</label>
-                        <div class="col-9">
+                        <label for="imput_files_id" class="col-12 col-sm-3 col-form-label">* Imagen de licencia</label>
+                        <div class="col-12 col-sm-9">
                             <div class="custom-file">
-                                <input type="file" id="photo" name="photo"
-                                    class="custom-file-input form-control {{ $errors->has('photo') ? ' is-invalid' : '' }}"
-                                    accept="image/x-png,image/gif,image/jpeg">
-                                @if ($errors->has('photo'))
+                                <input type="file" id="file_license" name="file_license"
+                                    class="custom-file-input form-control {{ $errors->has('file_license') ? ' is-invalid' : '' }}"
+                                    accept="image/png,image/gif,image/jpeg">
+                                @if ($errors->has('file_license'))
                                 <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $errors->first('photo') }}</strong>
+                                    <strong>{{ $errors->first('file_license') }}</strong>
                                 </span>
+                                @endif
+                                @if(is_null($driver->file_license))
+                                <img class="img-thumbnail d-none my-1" id="licencia-img-out" width="120" src="" />
+                                @else
+                                <img class="img-thumbnail my-1" id="licencia-img-out" width="120" src="{{ asset($driver->file_license) }}" style="display: initial; vertical-align: unset;"/>
                                 @endif
                                 <label class="custom-file-label" id="file-label">
                                     Elige un archivo
                                 </label>
                             </div>
-                            @if(!is_null($driver->photo))
-                            <a href="{{ asset($driver->photo) }}" download="" class="text-small">
-                                <small>{{ $driver->name . ' ' . $driver->first_last_name . ' ' . $driver->second_last_name }}</small>
-                            </a>
-                            @endif
                         </div>
                     </div>
 

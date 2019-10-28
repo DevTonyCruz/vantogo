@@ -30,9 +30,16 @@
         @include('front.elements.modal-warning')
     @endif
 
+    @if (session('danger-2'))
+        @include('front.elements.modal-danger-2')
+    @endif
+
     @if (count($errors) > 0)
         @include('front.elements.modal-danger')
     @endif
+
+    
+    @include('front.elements.modal-json')
     
     <!-- Start Content-->
     @yield('content')

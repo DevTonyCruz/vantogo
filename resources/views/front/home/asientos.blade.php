@@ -53,7 +53,7 @@
                 <div class="row div_ticket_row2_mod2">
 
                     <div class="col-md-7"><img class="img_100" src="{{ asset('front/img/icono_van.png')}}" alt="">
-                        <span class="img_chofer_ticket"><img src="{{ asset('front/img/imagen_chofer.png')}}"></span>
+                        <span class="img_chofer_ticket"><img class="rounded-circle driver-photo-ticket-view" width="50" height="50" src="{{ asset($travel->driver->file_driver) }}"></span>
                     </div>
 
                     <div class="col-md-5 font_chofer">
@@ -172,6 +172,7 @@
         </div>
     </div>
 </div>
+
 @endsection
 
 @section('css')
@@ -189,6 +190,13 @@
                 $("#asiento-{{ $pasajeros['asiento'] }}").addClass('ocupado');
             @endforeach
         @endif
+
+        @if (isset($ocupados))
+            @foreach ($ocupados as $ocupado)
+                $("#asiento-{{ $ocupado }}").addClass('ocupado');
+            @endforeach
+        @endif
+
     });
 
     $(".asientos").on('click', function(){

@@ -277,8 +277,8 @@ img.icons_redes {
 
 .img_chofer_ticket{
     position: absolute;
-    bottom: 25px;
-    right: 0px;
+    bottom: 40px;
+    right: 20px;
 }
 
 span.img_chofer_ticket_b {
@@ -314,7 +314,6 @@ span.img_chofer_ticket_b {
 
 .div_ticket_row2_mod2{
     bottom: 40px;
-    padding: 20px 20px 0;
     color: #ffffff;
     font-weight: bold;
 }
@@ -796,10 +795,6 @@ span.img_chofer_ticket_b {
 
    
 
-}
-
-.payment-container{
-    display: none;
 }
 
 

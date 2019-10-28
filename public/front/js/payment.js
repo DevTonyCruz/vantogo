@@ -90,13 +90,13 @@
 /*!***************************************!*\
   !*** ./resources/front/js/payment.js ***!
   \***************************************/
-/*! exports provided: createOrderConektaCard, createOrderConektaOxxo */
+/*! exports provided: createOrderConektaCard, createConektaOxxoOrder */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createOrderConektaCard", function() { return createOrderConektaCard; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createOrderConektaOxxo", function() { return createOrderConektaOxxo; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createConektaOxxoOrder", function() { return createConektaOxxoOrder; });
 /*
     Create conekta pay method by card
 */
@@ -110,13 +110,10 @@ var conektaSuccessResponseHandler = function conektaSuccessResponseHandler(token
     nombre: nombre,
     apellido: apellido,
     telefono: telefono,
-    correo: correo
+    correo: correo,
+    tipo: 'conekta-card'
   };
   createOrderConektaCard(data);
-};
-
-var conektaErrorResponseHandler = function conektaErrorResponseHandler(response) {
-  console.log(response);
 };
 
 $(function () {
@@ -127,81 +124,159 @@ $(function () {
       Conekta.Token.create($form, conektaSuccessResponseHandler, conektaErrorResponseHandler);
       return false;
     } else {
-      alert('Debe aceptar los terminos y condiciones');
+      printErrorProcess('Debe aceptar los terminos y condiciones');
+      $(this).removeAttr("disabled");
     }
   });
 });
+
+var conektaErrorResponseHandler = function conektaErrorResponseHandler(response) {
+  console.log(response.message_to_purchaser);
+  $("#conekta-card").removeAttr("disabled");
+  printErrorProcess(response.message_to_purchaser);
+};
+
 function createOrderConektaCard(data) {
-  RequestObject.AjaxJson('POST', 'payment/conekta/cart', data).then(function (response) {
-    //window.location = URL_WEB + '/payment/order-process/' + response.data.order_code;
-    //window.location = response.data.redirect;
-    if ($.isEmptyObject(response.error)) {
-      alert(response.success);
+  RequestObject.AjaxJson('POST', '/payment', data).then(function (response) {
+    $("#conekta-card").removeAttr("disabled");
+
+    if ($.isEmptyObject(response.errors)) {
+      window.location = response.data.redirect;
     } else {
-      printErrorMsg(response.error);
+      $("#conekta-card").removeAttr("disabled");
+
+      if (response.type == 'validation') {
+        printErrorValidation(response.errors);
+      }
+
+      if (type == 'process') {
+        printErrorProcess(daresponse.errorsta);
+      }
+
+      if (type == 'redirect') {
+        printErrorRedirect(response.errors, response.place);
+      }
     }
 
     console.log(response);
   }, function (xhrObj, textStatus, err) {
-    var data = xhrObj.responseJSON.errors;
-    console.log(xhrObj.responseJSON.errors);
-    printErrorMsg(data);
+    if (!$.isEmptyObject(xhrObj.responseJSON.data.errors)) {
+      var _type = xhrObj.responseJSON.data.type;
+      var _data = xhrObj.responseJSON.data.errors;
+
+      if (_type == 'validation') {
+        printErrorValidation(_data);
+      }
+
+      if (_type == 'process') {
+        printErrorProcess(_data);
+      }
+
+      if (_type == 'redirect') {
+        var place = xhrObj.responseJSON.data.place;
+        printErrorRedirect(_data, place);
+      }
+    }
   });
 }
 ;
+function createConektaOxxoOrder() {
+  $("#conekta-oxxo").prop("disabled", true);
 
-function printErrorMsg(msg) {
-  $(".print-error-msg").find("ul").html('');
-  $.each(msg, function (key, value) {
-    console.log(msg);
-    $(".print-error-msg").find("ul").append('<li>' + value + '</li>');
-  });
-  $('#error-payment').modal('show');
-}
-
-function createOrderConektaOxxo() {
-  $('.btn-payment-total').attr('disabled', true);
-  $('.spinner-payment-total').fadeIn();
-
-  if ($("#receiver_store").is(':checked')) {
-    $('#user_email').val($('#email_receiver_store').val());
+  if (!$("#accept-terms-oxxo-conekta").is(":checked")) {
+    $("#conekta-oxxo").removeAttr("disabled");
+    printErrorProcess('Debe aceptar los terminos y condiciones');
   }
 
-  var type_payment = $('#type_payment').val();
-  var user_id = $('#user_id').val();
-  var user_email = $('#user_email').val();
-  var receiver_store = $('#receiver_store').is(':checked') ? 1 : null;
-  var shipping_id = $('#id_shipping').val();
-  var invoice_id = $('#id_invoice').val();
-  var email_receiver_store = $('#email_receiver_store').val();
-  var name_receiver_store = $('#name_receiver_store').val();
-  var phone_receiver_store = $('#phone_receiver_store').val();
-  var sucursal_receiver_store = $('#sucursal_receiver_store').val();
+  var nombre = $('#nombre').val();
+  var apellido = $('#apellido').val();
+  var telefono = $('#telefono').val();
+  var correo = $('#correo').val();
   var data = {
-    id_local: local_uuid,
-    user_id: user_id,
-    type_payment: type_payment,
-    shipping_id: shipping_id,
-    invoice_id: invoice_id,
-    user_email: user_email,
-    email_receiver_store: email_receiver_store,
-    name_receiver_store: name_receiver_store,
-    phone_receiver_store: phone_receiver_store,
-    sucursal_receiver_store: sucursal_receiver_store,
-    receiver_store: receiver_store
+    nombre: nombre,
+    apellido: apellido,
+    telefono: telefono,
+    correo: correo,
+    tipo: 'conekta-oxxo'
   };
-  RequestObject.AjaxJson('POST', 'payment/conekta/oxxo', data).then(function (response) {
-    window.location = URL_WEB + '/payment/order-process/' + response.data.order_code;
-  }, function (xhrObj, textStatus, err) {
-    var data = xhrObj.responseJSON.data;
-    $('.spinner-payment-total').fadeOut();
-    $('.btn-payment-total').removeAttr('disabled');
+  RequestObject.AjaxJson('POST', '/payment', data).then(function (response) {
+    $("#conekta-oxxo").removeAttr("disabled");
 
-    if (typeof data !== 'undefined') {
-      $("#payment-modal .body-msg").html(data.msg);
-      $("#payment-modal").modal();
+    if ($.isEmptyObject(response.errors)) {
+      window.location = response.data.redirect;
+    } else {
+      if (response.type == 'validation') {
+        printErrorValidation(response.errors);
+      }
+
+      if (type == 'process') {
+        printErrorProcess(daresponse.errorsta);
+      }
+
+      if (type == 'redirect') {
+        printErrorRedirect(response.errors, response.place);
+      }
+    }
+  }, function (xhrObj, textStatus, err) {
+    if (!$.isEmptyObject(xhrObj.responseJSON.data.errors)) {
+      var _type2 = xhrObj.responseJSON.data.type;
+      var _data2 = xhrObj.responseJSON.data.errors;
+
+      if (_type2 == 'validation') {
+        printErrorValidation(_data2);
+      }
+
+      if (_type2 == 'process') {
+        printErrorProcess(_data2);
+      }
+
+      if (_type2 == 'redirect') {
+        var place = xhrObj.responseJSON.data.place;
+        printErrorRedirect(_data2, place);
+      }
     }
   });
+}
+
+function printErrorValidation(msg) {
+  if ($('#modal-json .modal-body ol').length > 0) {
+    $('#modal-json .modal-body ol').remove();
+  }
+
+  $('#modal-json .modal-body').append('<ol></ol>');
+  $("#modal-json .modal-body").find("ol").html('');
+  $.each(msg, function (key, value) {
+    $("#modal-json .modal-body").find("ol").append('<li>' + value + '</li>');
+  });
+  $("#modal-json .modal-title").html('¡Error!');
+  $("#modal-json").modal('show');
+}
+
+function printErrorProcess(msg) {
+  if ($('#modal-json .modal-body ol').length > 0) {
+    $('#modal-json .modal-body ol').remove();
+  }
+
+  $('#modal-json .modal-body').append('<ol></ol>');
+  $("#modal-json .modal-body").find("ol").html('');
+  $("#modal-json .modal-body").find("ol").append('<li>' + msg + '</li>');
+  $("#modal-json .modal-title").html('¡Error!');
+  $("#modal-json").modal('show');
+}
+
+function printErrorRedirect(msg, place) {
+  if ($('#modal-json .modal-body ol').length > 0) {
+    $('#modal-json .modal-body ol').remove();
+  }
+
+  $('#modal-json .modal-body').append('<ol></ol>');
+  $("#modal-json .modal-body").find("ol").html('');
+  $("#modal-json .modal-body").find("ol").append('<li>' + msg + '</li>');
+  $("#modal-json .modal-title").html('¡Error!');
+  $("#modal-json").modal('show');
+  setTimeout(function () {
+    window.location.href = place;
+  }, 5000);
 }
 
 /***/ }),

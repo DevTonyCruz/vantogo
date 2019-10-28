@@ -169,22 +169,11 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'permission']], func
 });
 
 
-Route::get('/',                 'Web\Front\HomeController@index')->name('front.home.index');
-Route::post('/viaje',           'Web\Front\HomeController@viaje')->name('front.home.viaje');
-Route::get('/asientos',         'Web\Front\HomeController@asientos')->name('front.home.asientos');
-Route::post('/pasajeros',       'Web\Front\HomeController@pasajeros')->name('front.home.pasajeros');
-Route::get('/pago',             'Web\Front\HomeController@pago')->name('front.home.pago');
-
-Route::group(['prefix' => 'payment'], function () {
-    Route::post('conekta/cart', 'Web\Front\PaymentController@cartConektaPayment')->name('payment.conekta.cart');
-    Route::post('conekta/oxxo', 'Web\Front\PaymentController@oxxoConektaPayment')->name('payment.conekta.oxxo');
-});
-
-/*Route::post('/',                'Web\Admin\RolesController@store')->name('roles.store');
-Route::get('/{id}',             'Web\Admin\RolesController@show')->name('roles.show');
-Route::get('/{id}/edit',        'Web\Admin\RolesController@edit')->name('roles.edit');
-Route::put('/{id}',             'Web\Admin\RolesController@update')->name('roles.update');
-Route::delete('/{id}',          'Web\Admin\RolesController@destroy')->name('roles.destroy');
-Route::put('/status/{id}',      'Web\Admin\RolesController@status')->name('roles.status');
-Route::get('/permission/{id}',  'Web\Admin\RolesController@permission')->name('roles.permission');
-Route::put('/permission/{id}',  'Web\Admin\RolesController@save_permission')->name('roles.savePermission');*/
+Route::get('/',             'Web\Front\HomeController@index')->name('front.home.index');
+Route::post('/viaje',       'Web\Front\HomeController@viaje')->name('front.home.viaje');
+Route::get('/asientos',     'Web\Front\HomeController@asientos')->name('front.home.asientos');
+Route::post('/pasajeros',   'Web\Front\HomeController@pasajeros')->name('front.home.pasajeros');
+Route::get('/pago',         'Web\Front\HomeController@pago')->name('front.home.pago');
+Route::get('/pago',         'Web\Front\HomeController@pago')->name('front.home.pago');
+Route::get('/final',        'Web\Front\HomeController@final')->name('front.home.final');
+Route::post('/payment',     'Web\Front\paymentController@initiated_order')->name('front.payment');

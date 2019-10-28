@@ -1,8 +1,8 @@
 /*
     Create conekta pay method by card
 */
-  
-var conektaSuccessResponseHandler = function(token) {
+
+var conektaSuccessResponseHandler = function (token) {
 
     let nombre = $('#nombre').val();
     let apellido = $('#apellido').val();
@@ -14,112 +14,186 @@ var conektaSuccessResponseHandler = function(token) {
         nombre: nombre,
         apellido: apellido,
         telefono: telefono,
-        correo: correo
+        correo: correo,
+        tipo: 'conekta-card'
     }
 
     createOrderConektaCard(data);
 };
 
-var conektaErrorResponseHandler = function(response) {
-
-    console.log(response);
-};
-
 $(function () {
-  $("#conekta-card").on('click', function(event) {
+    $("#conekta-card").on('click', function (event) {
 
-    if($("#accept-terms-card-conekta").is(":checked")){
-        var $form = $("#card-form-conekta");
-        $(this).prop("disabled", true);
-        Conekta.Token.create($form, conektaSuccessResponseHandler, conektaErrorResponseHandler);
-        return false;
-    }else{
-        alert('Debe aceptar los terminos y condiciones');
-    }
-  });
+        if ($("#accept-terms-card-conekta").is(":checked")) {
+            var $form = $("#card-form-conekta");
+            $(this).prop("disabled", true);
+            Conekta.Token.create($form, conektaSuccessResponseHandler, conektaErrorResponseHandler);
+            return false;
+        } else {
+            printErrorProcess('Debe aceptar los terminos y condiciones')
+            $(this).removeAttr("disabled");
+        }
+    });
 });
+
+var conektaErrorResponseHandler = function (response) {
+    console.log(response.message_to_purchaser);
+    $("#conekta-card").removeAttr("disabled");
+    printErrorProcess(response.message_to_purchaser)
+};
 
 export function createOrderConektaCard(data) {
 
-    RequestObject.AjaxJson('POST', 'payment/conekta/cart', data).then(
+    RequestObject.AjaxJson('POST', '/payment', data).then(
         function (response) {
 
-            //window.location = URL_WEB + '/payment/order-process/' + response.data.order_code;
-            //window.location = response.data.redirect;
+            $("#conekta-card").removeAttr("disabled");
             
-            if($.isEmptyObject(response.error)){
-                alert(response.success);
-            }else{
-                printErrorMsg(response.error);
+            if ($.isEmptyObject(response.errors)) {
+                window.location = response.data.redirect;
+            } else {
+                
+                $("#conekta-card").removeAttr("disabled");
+                if(response.type == 'validation'){
+                    printErrorValidation(response.errors);
+                }
+                
+                if(type == 'process'){
+                    printErrorProcess(daresponse.errorsta);
+                }
+                
+                if(type == 'redirect'){
+                    printErrorRedirect(response.errors, response.place);
+                }
             }
 
             console.log(response);
         },
         function (xhrObj, textStatus, err) {
-            const data = xhrObj.responseJSON.errors;
-            console.log(xhrObj.responseJSON.errors);
 
-            printErrorMsg(data);
+            if (!$.isEmptyObject(xhrObj.responseJSON.data.errors)){                
+                const type = xhrObj.responseJSON.data.type;              
+                const data = xhrObj.responseJSON.data.errors;
+                
+                if(type == 'validation'){
+                    printErrorValidation(data);
+                }
+                
+                if(type == 'process'){
+                    printErrorProcess(data);
+                }
+                
+                if(type == 'redirect'){           
+                    const place = xhrObj.responseJSON.data.place;
+                    printErrorRedirect(data, place);
+                }
+            }
         });
 };
 
-function printErrorMsg (msg) {
-    $(".print-error-msg").find("ul").html('');
-    $.each( msg, function( key, value ) {
-        console.log(msg);
-        $(".print-error-msg").find("ul").append('<li>'+value+'</li>');
-    });
+export function createConektaOxxoOrder() {
 
-    $('#error-payment').modal('show')
-}
+    $("#conekta-oxxo").prop("disabled", true);
 
-export function createOrderConektaOxxo() {
-    $('.btn-payment-total').attr('disabled', true);
-    $('.spinner-payment-total').fadeIn();
-
-    if ($("#receiver_store").is(':checked')) {
-        $('#user_email').val($('#email_receiver_store').val());
+    if (!$("#accept-terms-oxxo-conekta").is(":checked")) {
+        $("#conekta-oxxo").removeAttr("disabled");
+        printErrorProcess('Debe aceptar los terminos y condiciones')
     }
 
-    let type_payment = $('#type_payment').val();
-    let user_id = $('#user_id').val();
-    let user_email = $('#user_email').val();
-    let receiver_store = ($('#receiver_store').is(':checked')) ? 1 : null;
-    let shipping_id = $('#id_shipping').val();
-    let invoice_id = $('#id_invoice').val();
-    let email_receiver_store = $('#email_receiver_store').val();
-    let name_receiver_store = $('#name_receiver_store').val();
-    let phone_receiver_store = $('#phone_receiver_store').val();
-    let sucursal_receiver_store = $('#sucursal_receiver_store').val();
+    let nombre = $('#nombre').val();
+    let apellido = $('#apellido').val();
+    let telefono = $('#telefono').val();
+    let correo = $('#correo').val();
 
     const data = {
-        id_local: local_uuid,
-        user_id: user_id,
-        type_payment: type_payment,
-        shipping_id: shipping_id,
-        invoice_id: invoice_id,
-        user_email: user_email,
-        email_receiver_store: email_receiver_store,
-        name_receiver_store: name_receiver_store,
-        phone_receiver_store: phone_receiver_store,
-        sucursal_receiver_store: sucursal_receiver_store,
-        receiver_store: receiver_store
+        nombre: nombre,
+        apellido: apellido,
+        telefono: telefono,
+        correo: correo,
+        tipo: 'conekta-oxxo'
     }
 
-    RequestObject.AjaxJson('POST', 'payment/conekta/oxxo', data).then(
+    RequestObject.AjaxJson('POST', '/payment', data).then(
         function (response) {
 
-            window.location = URL_WEB + '/payment/order-process/' + response.data.order_code;
+            $("#conekta-oxxo").removeAttr("disabled");
+
+            if ($.isEmptyObject(response.errors)) {
+                window.location = response.data.redirect;
+            } else {
+                if(response.type == 'validation'){
+                    printErrorValidation(response.errors);
+                }
+                
+                if(type == 'process'){
+                    printErrorProcess(daresponse.errorsta);
+                }
+                
+                if(type == 'redirect'){
+                    printErrorRedirect(response.errors, response.place);
+                }
+            }
         },
         function (xhrObj, textStatus, err) {
-            const data = xhrObj.responseJSON.data;
-            
-            $('.spinner-payment-total').fadeOut();
-            $('.btn-payment-total').removeAttr('disabled');
 
-            if (typeof data !== 'undefined') {
-                $("#payment-modal .body-msg").html(data.msg);
-                $("#payment-modal").modal();
+            if (!$.isEmptyObject(xhrObj.responseJSON.data.errors)){                
+                const type = xhrObj.responseJSON.data.type;              
+                const data = xhrObj.responseJSON.data.errors;
+                
+                if(type == 'validation'){
+                    printErrorValidation(data);
+                }
+                
+                if(type == 'process'){
+                    printErrorProcess(data);
+                }
+                
+                if(type == 'redirect'){           
+                    const place = xhrObj.responseJSON.data.place;
+                    printErrorRedirect(data, place);
+                }
             }
         });
 }
+
+function printErrorValidation(msg) {
+    if ($('#modal-json .modal-body ol').length > 0) {
+        $('#modal-json .modal-body ol').remove();
+    }
+    $('#modal-json .modal-body').append('<ol></ol>');
+    $("#modal-json .modal-body").find("ol").html('');
+
+    $.each(msg, function (key, value) {
+        $("#modal-json .modal-body").find("ol").append('<li>' + value + '</li>');
+    });
+
+    $("#modal-json .modal-title").html('¡Error!');
+    $("#modal-json").modal('show');
+}
+
+function printErrorProcess(msg) {
+    if ($('#modal-json .modal-body ol').length > 0) {
+        $('#modal-json .modal-body ol').remove();
+    }
+    $('#modal-json .modal-body').append('<ol></ol>');
+    $("#modal-json .modal-body").find("ol").html('');
+    $("#modal-json .modal-body").find("ol").append('<li>' + msg + '</li>');
+    $("#modal-json .modal-title").html('¡Error!');
+    $("#modal-json").modal('show');
+}
+
+function printErrorRedirect(msg, place) {
+    if ($('#modal-json .modal-body ol').length > 0) {
+        $('#modal-json .modal-body ol').remove();
+    }
+    $('#modal-json .modal-body').append('<ol></ol>');
+    $("#modal-json .modal-body").find("ol").html('');
+    $("#modal-json .modal-body").find("ol").append('<li>' + msg + '</li>');
+    $("#modal-json .modal-title").html('¡Error!');
+    $("#modal-json").modal('show');
+
+    setTimeout(function(){
+        window.location.href = place;
+    }, 5000);
+}
+
